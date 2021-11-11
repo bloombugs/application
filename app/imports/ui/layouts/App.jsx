@@ -4,17 +4,27 @@ import { Meteor } from 'meteor/meteor';
 import 'semantic-ui-css/semantic.css';
 import { Roles } from 'meteor/alanning:roles';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import NavBar from '../components/NavBar';
-import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
-import ListStuff from '../pages/ListStuff';
-import ListStuffAdmin from '../pages/ListStuffAdmin';
-import AddStuff from '../pages/AddStuff';
-import EditStuff from '../pages/EditStuff';
+import NavBar from '../components/NavBar';
+import ListReport from '../pages/ListReport';
+import ListReportAdmin from '../pages/ListReportAdmin';
+import EditReport from '../pages/EditReport';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
+import Distress from '../pages/Distress';
+import Sighting from '../pages/Sighting';
+import SealSighting from '../pages/SealSighting';
+import TurtleSighting from '../pages/TurtleSighting';
+import Other from '../pages/Other';
+import BirdSighting from '../pages/BirdSighting';
+import InfoDistress from '../pages/InfoDistress';
+import BirdDistress from '../pages/BirdDistress';
+import TurtleDistress from '../pages/TurtleDistress';
+import SealDistress from '../pages/SealDistress';
+import TaskForm from '../pages/TaskForm';
+import TestPage from '../pages/testPage';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -26,15 +36,26 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={Landing}/>
             <Route path="/signin" component={Signin}/>
+            <Route path="/distress" component={Distress}/>
+            <Route path="/sighting" component={Sighting}/>
+            <Route path="/sealsighting" component={SealSighting}/>
+            <Route path="/turtlesighting" component={TurtleSighting}/>
+            <Route path="/birdsighting" component={BirdSighting}/>
+            <Route path="/other" component={Other}/>
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
-            <ProtectedRoute path="/list" component={ListStuff}/>
-            <ProtectedRoute path="/add" component={AddStuff}/>
-            <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
-            <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
+            <Route path="/navbar" component={NavBar}/>
+            <Route path="/infodistress" component={InfoDistress}/>
+            <Route path="/birddistress" component={BirdDistress}/>
+            <Route path="/turtledistress" component={TurtleDistress}/>
+            <Route path="/sealdistress" component={SealDistress}/>
+            <Route path="/taskform" component={TaskForm}/>
+            <Route path="/testpage" component={TestPage}/>
+            <AdminProtectedRoute path="/list" component={ListReport}/>
+            <AdminProtectedRoute path="/adminlist" component={ListReportAdmin}/>
+            <ProtectedRoute path="/edit/:_id" component={EditReport}/>
             <Route component={NotFound}/>
           </Switch>
-          <Footer/>
         </div>
       </Router>
     );
