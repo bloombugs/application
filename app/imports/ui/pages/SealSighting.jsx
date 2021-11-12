@@ -56,7 +56,6 @@ class SealSighting extends React.Component {
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
             <Segment>
               <TextField name='date' type='date'/>
-              <TextField name='name'/>
               <TextField name='phone' decimal={false}/>
               <TextField name='location'/>
               <TextField name='description'/>
