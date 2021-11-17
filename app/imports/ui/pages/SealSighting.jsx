@@ -18,13 +18,30 @@ const formSchema = new SimpleSchema({
   location: String,
   description: String,
   markers: String,
-  behavior: String,
+  sealBehavior: {
+    type: String,
+    allowedValues: ['Sleeping', 'Moving', ''],
+    defaultValue: 'Sleeping',
+  },
   numPeople: {
     type: String,
     allowedValues: ['0 - 25', '26 - 50', '51 - 100', '100 +'],
     defaultValue: '0 - 25',
   },
 });
+
+// const behaviorOptions = [
+//   {
+//     key: 'Sleeping',
+//     text: 'Sleeping',
+//     value: 'Sleeping',
+//   },
+//   {
+//     key: 'Moving',
+//     text: 'Moving',
+//     value: 'Moving',
+//   },
+// ];
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
@@ -66,7 +83,7 @@ class SealSighting extends React.Component {
                 <Image src={tags} size="medium" centered/>
               </Grid.Row>
               <TextField name='markers'/>
-              <TextField name='behavior'/>
+              <SelectField name='sealBehavior'/>
               <SelectField name='numPeople'/>
               <SubmitField value='Submit'/>
               <ErrorsField/>
