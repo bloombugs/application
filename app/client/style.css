@@ -1,9 +1,14 @@
 #landing-page {
   padding-top: 10%;
-  background: #CCE2FF url('https://fh-sites.imgix.net/sites/2813/2017/10/06201024/North-Shore-Hawaii.jpg?auto=compress%2Cformat&w=1000&h=1000&fit=max') no-repeat fixed center center;
-  background-size: cover;
-  padding-bottom: 30px;
+  padding-bottom: 20%;
   color: white;
+}
+.background {
+  background: url('https://h-mar.org/wp-content/uploads/2019/04/shutterstock_1079402375-min.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+.transparent-background {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 .logo {
   padding-top: 20px;
@@ -13,9 +18,7 @@
   padding-top: 20px;
   padding-bottom: 10px;
 }
-.landingInfo {
-  padding-top: 30px;
+.bold {
+  font-weight: bold;
 }
-
-
 

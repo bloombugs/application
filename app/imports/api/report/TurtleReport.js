@@ -3,12 +3,12 @@ import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
 /**
- * The ReportsCollection. This was deprecated but we are saving it for now as a template for future reference. As the EditReport.jsx is tied to this and we wish to implement editing capabilities in the future.
+ * The ReportsCollection. It encapsulates state and variable values for each report.
  */
-class ReportsCollection {
+class TurtleReportsCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'ReportsCollection';
+    this.name = 'TurtleReportsCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
@@ -22,11 +22,17 @@ class ReportsCollection {
       latitude: Number,
       longitude: Number,
       description: String,
-      numBirds: {
+      markers: {
         type: String,
-        allowedValues: ['1', '2', '3', '4+'],
-        defaultValue: '1',
+        allowedValues: ['Applied Bleach', 'Tags', 'Satellite', 'Scar', 'Unknown'],
+        defaultValue: 'Unknown',
       },
+      numPeople: {
+        type: String,
+        allowedValues: ['0 - 5', '5 - 10', '10+'],
+        defaultValue: '0 - 5',
+      },
+      image: String,
       owner: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
@@ -39,6 +45,6 @@ class ReportsCollection {
 
 /**
  * The singleton instance of the ReportsCollection.
- * @type {ReportsCollection}
+ * @type {TurtleReportsCollection}
  */
-export const Report = new ReportsCollection();
+export const TurtleReport = new TurtleReportsCollection();
