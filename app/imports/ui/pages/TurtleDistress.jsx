@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Container, Grid, Header, List, Image, Icon } from 'semantic-ui-react';
+import { Button, Grid, Header, List, Image, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 const Cm = '/images/greenSeaTurtle.jpg';
@@ -44,7 +44,7 @@ class TurtleDistress extends React.Component {
                 Click for Online Form
               </Link>
             </Button>
-            <div className="ui hidden divider"></div>
+            <div className="ui hidden divider"/>
           </Grid.Column>
         </Grid.Row>
       </Grid>
