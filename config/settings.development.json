@@ -9,5 +9,7 @@
       "email": "john@foo.com",
       "password": "changeme"
     }
-  ]
+  ],
+
+  "public": {"theAdminPassword": "adminpassword"}
 }

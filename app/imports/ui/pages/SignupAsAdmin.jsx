@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Meteor } from 'meteor/meteor';
 import { Link, Redirect } from 'react-router-dom';
 import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
@@ -22,7 +23,7 @@ class SignupAsAdmin extends React.Component {
   /* Handle Signup submission. Create user account and a profile entry, then redirect to the home page. */
   submit = () => {
     const { email, password, adminPassword } = this.state;
-    if (adminPassword === 'admin') {
+    if (adminPassword === Meteor.settings.public.theAdminPassword) {
       Accounts.createUser({ email, username: email, password }, (err) => {
         if (err) {
           this.setState({ error: err.reason });
