@@ -17,6 +17,20 @@ function createUser(email, password, role) {
   }
 }
 
+Meteor.methods({
+  'addAdminUser'({ email, password }) {
+    console.log(`  Creating user ${email}.`);
+    const userID = Accounts.createUser({ username: email, email: email, password: password }, (err) => {
+      if (err) {
+        this.setState({ error: err.reason });
+      } else {
+        Roles.addUsersToRoles(userID, 'admin');
+        this.setState({ error: '', redirectToReferer: true });
+      }
+    });
+  },
+});
+
 // When running app for first time, pass a settings file to set up a default user account.
 if (Meteor.users.find().count() === 0) {
   if (Meteor.settings.defaultAccounts) {
