@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { Link, Redirect } from 'react-router-dom';
 import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
-// import { Accounts } from 'meteor/accounts-base';
+import { Accounts } from 'meteor/accounts-base';
 
 /**
  * Signup component is similar to signin component, but we create a new user instead.
@@ -24,15 +24,15 @@ class SignupAsAdmin extends React.Component {
   submit = () => {
     const { email, password, adminPassword } = this.state;
     if (adminPassword === Meteor.settings.public.theAdminPassword) {
-      Meteor.call('addAdminUser', [email, password]);
-      // Accounts.createUser({ email, username: email, password }, (err) => {
-      //   if (err) {
-      //     this.setState({ error: err.reason });
-      //   } else {
-      //     // put meteor method on this line. Call meteor methods to call another method from accounts being Roles.addUsersToRoles(userID, 'admin');
-      //     this.setState({ error: '', redirectToReferer: true });
-      //   }
-      // });
+      Accounts.createUser({ email, username: email, password }, (err) => {
+        if (err) {
+          this.setState({ error: err.reason });
+        } else {
+          Meteor.call('addAdminUser', { email });
+          // put meteor method on this line. Call meteor methods to call another method from accounts being Roles.addUsersToRoles(userID, 'admin');
+          this.setState({ error: '', redirectToReferer: true });
+        }
+      });
     } else {
       this.setState({ error: 'Admin password was incorrect' });
     }

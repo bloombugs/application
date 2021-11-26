@@ -18,16 +18,11 @@ function createUser(email, password, role) {
 }
 
 Meteor.methods({
-  'addAdminUser'({ email, password }) {
+  'addAdminUser'({ email }) {
     console.log(`  Creating user ${email}.`);
-    const userID = Accounts.createUser({ username: email, email: email, password: password }, (err) => {
-      if (err) {
-        this.setState({ error: err.reason });
-      } else {
-        Roles.addUsersToRoles(userID, 'admin');
-        this.setState({ error: '', redirectToReferer: true });
-      }
-    });
+    const adminUserEmail = Meteor.users.findOne({ 'emails.address': email });
+    Roles.createRole('admin', { unlessExists: true });
+    Roles.addUsersToRoles(adminUserEmail._id, 'admin');
   },
 });
 
