@@ -6,6 +6,10 @@ import { sightingReportPage } from './sightingReport.page';
 import { infoPage } from './info.page';
 import { navBar } from './navbar.component';
 import { signupPage } from './signup.page';
+import { sealReportPage } from './sealReport.page';
+import { turtleReportPage } from './turtleReport.page';
+import { birdReportPage } from './birdReport.page';
+import { otherReportPage } from './otherReport.page';
 
 /* global fixture:false, test:false */
 
@@ -44,9 +48,20 @@ test('Test that landing page shows up via navbar', async (testController) => {
   await landingPage.isDisplayed(testController);
 });
 
-test('Test that sighting report page shows up via navbar', async (testController) => {
+test.only('Test that sighting report page shows up and the pages for the other animal sightings and the other page', async (testController) => {
   await navBar.gotoSightingReportPage(testController);
   await sightingReportPage.isDisplayed(testController);
+  await sightingReportPage.gotoSealReportPage(testController);
+  await sealReportPage.isDisplayed(testController);
+  await navBar.gotoSightingReportPage(testController);
+  await sightingReportPage.gotoTurtleReportPage(testController);
+  await turtleReportPage.isDisplayed(testController);
+  await navBar.gotoSightingReportPage(testController);
+  await sightingReportPage.gotoBirdReportPage(testController);
+  await birdReportPage.isDisplayed(testController);
+  await navBar.gotoSightingReportPage(testController);
+  await sightingReportPage.gotoOtherReportPage(testController);
+  await otherReportPage.isDisplayed(testController);
 });
 
 test('Test that info report page shows up via navbar', async (testController) => {

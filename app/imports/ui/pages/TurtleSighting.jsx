@@ -117,7 +117,7 @@ class TurtleSighting extends React.Component {
   render() {
     let fRef = null;
     return (
-      <Grid centered style={{ background: '#87acb5' }}>
+      <Grid id='turtleReportPage' centered style={{ background: '#87acb5' }}>
         <Container><Grid.Column>
           <div className="ui hidden divider"></div>
           <div className="ui hidden divider"></div>

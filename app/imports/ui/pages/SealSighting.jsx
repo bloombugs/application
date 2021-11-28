@@ -117,7 +117,7 @@ class SealSighting extends React.Component {
   render() {
     let fRef = null;
     return (
-      <Grid centered style={{ background: '#87acb5' }}>
+      <Grid id='sealReportPage' centered style={{ background: '#87acb5' }}>
         <Container><Grid.Column>
           <div className="ui hidden divider"></div>
           <Header as="h2" textAlign="center" style={{ color: 'white' }}>Seal Sighting Form</Header>

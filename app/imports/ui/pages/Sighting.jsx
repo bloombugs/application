@@ -16,18 +16,18 @@ export default class Sighting extends React.Component {
             <div className="ui hidden divider"></div>
             <Header as="h3" style={{ color: 'white' }}>Marine Animal Report</Header>
             <p style={{ color: 'white' }}>What type of animal are you reporting?</p>
-            <Button secondary inverted style={{ background: 'white' }}><Link to="/sealsighting"><Image src={seal} size="medium"/>
+            <Button id='sealPage' secondary inverted style={{ background: 'white' }}><Link to="/sealsighting"><Image src={seal} size="medium"/>
               Hawaiian Monk Seal</Link></Button>
             <div className="ui hidden divider"></div>
-            <Button secondary inverted style={{ background: 'white' }}><Link to="/turtlesighting"><Image src={turtle} size="medium"/>
+            <Button id='turtlePage' secondary inverted style={{ background: 'white' }}><Link to="/turtlesighting"><Image src={turtle} size="medium"/>
               Turtle</Link></Button>
           </Grid.Column>
           <Grid.Row>
             <div className="ui hidden divider"></div>
-            <Button secondary inverted style={{ background: 'white' }}><Link to="/birdsighting"><Image src={bird} size="medium"/>
+            <Button id='birdPage' secondary inverted style={{ background: 'white' }}><Link to="/birdsighting"><Image src={bird} size="medium"/>
               Bird</Link></Button>
             <div className="ui hidden divider"></div>
-            <Button secondary inverted style={{ background: 'white' }}><Link to="/other"><Image src={whale} size="medium"/>
+            <Button id='otherPage' secondary inverted style={{ background: 'white' }}><Link to="/other"><Image src={whale} size="medium"/>
               Other</Link></Button>
           </Grid.Row>
         </Grid.Row>
