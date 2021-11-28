@@ -10,6 +10,9 @@ import { sealReportPage } from './sealReport.page';
 import { turtleReportPage } from './turtleReport.page';
 import { birdReportPage } from './birdReport.page';
 import { otherReportPage } from './otherReport.page';
+import { birdInfoPage } from './birdInfo.page';
+import { turtleInfoPage } from './turtleInfo.page';
+import { sealInfoPage } from './sealInfo.page';
 
 /* global fixture:false, test:false */
 
@@ -48,7 +51,7 @@ test('Test that landing page shows up via navbar', async (testController) => {
   await landingPage.isDisplayed(testController);
 });
 
-test.only('Test that sighting report page shows up and the pages for the other animal sightings and the other page', async (testController) => {
+test('Test that sighting report page shows up and the pages for the other animal sightings and the other page', async (testController) => {
   await navBar.gotoSightingReportPage(testController);
   await sightingReportPage.isDisplayed(testController);
   await sightingReportPage.gotoSealReportPage(testController);
@@ -64,7 +67,21 @@ test.only('Test that sighting report page shows up and the pages for the other a
   await otherReportPage.isDisplayed(testController);
 });
 
-test('Test that info report page shows up via navbar', async (testController) => {
+test('Test that info report page shows and the pages for the animals and other', async (testController) => {
   await navBar.gotoInfoPage(testController);
   await infoPage.isDisplayed(testController);
+  await infoPage.gotoSealInfoPage(testController);
+  await sealInfoPage.isDisplayed(testController);
+  await navBar.gotoInfoPage(testController);
+  await infoPage.isDisplayed(testController);
+  await infoPage.gotoTurtleInfoPage(testController);
+  await turtleInfoPage.isDisplayed(testController);
+  await navBar.gotoInfoPage(testController);
+  await infoPage.isDisplayed(testController);
+  await infoPage.gotoBirdInfoPage(testController);
+  await birdInfoPage.isDisplayed(testController);
+  await navBar.gotoInfoPage(testController);
+  await infoPage.isDisplayed(testController);
+  await infoPage.gotoOtherInfoPage(testController);
+  await otherReportPage.isDisplayed(testController);
 });

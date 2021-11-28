@@ -8,7 +8,7 @@ class TurtleDistress extends React.Component {
   render() {
     return (
 
-      <Grid textAlign='center' style={{ background: '#87acb5' }}>
+      <Grid id='turtleInfoPage' textAlign='center' style={{ background: '#87acb5' }}>
 
         <Grid.Row verticalAlign='middle'>
           <Grid.Column width={14}>

@@ -16,17 +16,17 @@ class InfoDistress extends React.Component {
             <div className="ui hidden divider"></div>
             <Header as="h3" style={{ color: '#AF4831FF' }}>Don&apos;t know what an animal in distress looks like?</Header>
             <p style={{ color: 'white' }}>Click on an animal below to see examples</p>
-            <Button secondary inverted style={{ background: 'white' }}><Link to="/sealdistress"><Image src={seal} size="medium"/>Hawaiian Monk Seal</Link></Button>
+            <Button id='sealInfo' secondary inverted style={{ background: 'white' }}><Link to="/sealdistress"><Image src={seal} size="medium"/>Hawaiian Monk Seal</Link></Button>
             <div className="ui hidden divider"></div>
-            <Button secondary inverted style={{ background: 'white' }}><Link to="/turtledistress"><Image src={turtle} size="medium"/>
+            <Button id='turtleInfo' secondary inverted style={{ background: 'white' }}><Link to="/turtledistress"><Image src={turtle} size="medium"/>
               Turtle</Link></Button>
           </Grid.Column>
           <Grid.Row>
             <div className="ui hidden divider"></div>
-            <Button secondary inverted style={{ background: 'white' }}><Link to="/birddistress"><Image src={bird} size="medium"/>
+            <Button id='birdInfo' secondary inverted style={{ background: 'white' }}><Link to="/birddistress"><Image src={bird} size="medium"/>
               Bird</Link></Button>
             <div className="ui hidden divider"></div>
-            <Button secondary inverted style={{ background: 'white' }}><Link to="/other"><Image src={whale} size="medium"/>
+            <Button id='otherInfo' secondary inverted style={{ background: 'white' }}><Link to="/other"><Image src={whale} size="medium"/>
               Other</Link></Button>
           </Grid.Row>
         </Grid.Row>

@@ -8,7 +8,7 @@ class BirdDistress extends React.Component {
   render() {
     return (
 
-      <Grid textAlign='center' style={{ background: '#87acb5' }}>
+      <Grid id='birdInfoPage' textAlign='center' style={{ background: '#87acb5' }}>
         <Grid.Row verticalAlign='middle'>
           <Grid.Column width={14}>
             <Image src={wtsh} size="medium" centered alt='wedge-tailed shearwater'/>
