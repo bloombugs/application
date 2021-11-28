@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Grid, Container, List } from 'semantic-ui-react';
+import { Button, Grid, Container, List, Header } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 
 /** A simple static component to render some text for the landing page. */
@@ -12,9 +12,9 @@ class Landing extends React.Component {
             <Grid id='landing-page' className='center aligned'>
               <Grid.Row verticalAlign='middle'>
                 <Grid.Column width={14}>
-                  <h1>Welcome to Kahukai: the HMAR Reporting app. This app is used to report animals in distress and to report
-                    animal sightings so that Hawaii Marine Animal Response (HMAR) can respond to and assess animals. </h1>
-                  <h4>To use this app, you can select from the following via the top menu: </h4>
+                  <Header as='h1' id='landing-header'>Welcome to Kahukai: the HMAR Reporting app. This app is used to report animals in distress and to report
+                    animal sightings so that Hawaii Marine Animal Response (HMAR) can respond to and assess animals. </Header>
+                  <Header as='h4' id='landing-header'>To use this app, you can select from the following via the top menu: </Header>
                   <List>
                     <List.Item>Distress Report: Prompts you to report an animal in distress to report to HMAR</List.Item>
                     <List.Item>Sighting Report: Prompts you to report an animal that you have sighted</List.Item>
@@ -30,6 +30,19 @@ class Landing extends React.Component {
               </Grid.Row>
             </Grid>
           </div>
+        </div>
+
+        <div className='bottom-landing'>
+          <Grid className='center aligned'>
+            <Grid.Row verticalAlign='middle'>
+              <Grid.Column width={14}>
+                <Header as="h1">
+                  Who is HMAR?
+                </Header>
+                <div className="ui hidden divider"></div>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
         </div>
       </Container>
     );
