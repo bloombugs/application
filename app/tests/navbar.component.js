@@ -19,7 +19,7 @@ class NavBar {
 
   /** Check that the specified user is currently logged in. */
   async isLoggedIn(testController, username) {
-    await testController.expect(Selector('#navbar-current-user').innerText).eql(username);
+    await testController.wait(10000).expect(Selector('#navbar-current-user').innerText).eql(username);
   }
 
   /** Check that someone is logged in, then click items to logout. */
