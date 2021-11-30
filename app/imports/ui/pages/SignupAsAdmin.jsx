@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Meteor } from 'meteor/meteor';
 import { Link, Redirect } from 'react-router-dom';
 import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
@@ -7,11 +8,11 @@ import { Accounts } from 'meteor/accounts-base';
 /**
  * Signup component is similar to signin component, but we create a new user instead.
  */
-class Signup extends React.Component {
+class SignupAsAdmin extends React.Component {
   /* Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '', error: '', redirectToReferer: false };
+    this.state = { email: '', password: '', adminPassword: '', error: '', redirectToReferer: false };
   }
 
   /* Update the form controls each time the user interacts with them. */
@@ -21,14 +22,20 @@ class Signup extends React.Component {
 
   /* Handle Signup submission. Create user account and a profile entry, then redirect to the home page. */
   submit = () => {
-    const { email, password } = this.state;
-    Accounts.createUser({ email, username: email, password }, (err) => {
-      if (err) {
-        this.setState({ error: err.reason });
-      } else {
-        this.setState({ error: '', redirectToReferer: true });
-      }
-    });
+    const { email, password, adminPassword } = this.state;
+    if (adminPassword === Meteor.settings.public.theAdminPassword) {
+      Accounts.createUser({ email, username: email, password }, (err) => {
+        if (err) {
+          this.setState({ error: err.reason });
+        } else {
+          Meteor.call('addAdminUser', { email });
+          // put meteor method on this line. Call meteor methods to call another method from accounts being Roles.addUsersToRoles(userID, 'admin');
+          this.setState({ error: '', redirectToReferer: true });
+        }
+      });
+    } else {
+      this.setState({ error: 'Admin password was incorrect' });
+    }
   }
 
   /* Display the signup form. Redirect to add page after successful registration and login. */
@@ -39,12 +46,12 @@ class Signup extends React.Component {
       return <Redirect to={from}/>;
     }
     return (
-      <Container id="signup-page">
+      <Container id="admin signup-page">
         <Grid textAlign="center" centered columns={2}>
           <Grid.Row verticalAlign='middle'>
             <Grid.Column>
               <Header as="h2" textAlign="center">
-                Register your account
+                Register your admin account
               </Header>
               <Form onSubmit={this.submit}>
                 <Segment stacked>
@@ -65,6 +72,16 @@ class Signup extends React.Component {
                     iconPosition="left"
                     name="password"
                     placeholder="Password"
+                    type="password"
+                    onChange={this.handleChange}
+                  />
+                  <Form.Input
+                    label="Admin Password"
+                    id="admin-signup-form-password"
+                    icon="lock"
+                    iconPosition="left"
+                    name="adminPassword"
+                    placeholder="Admin Password"
                     type="password"
                     onChange={this.handleChange}
                   />
@@ -92,8 +109,8 @@ class Signup extends React.Component {
 }
 
 /* Ensure that the React Router location object is available in case we need to redirect. */
-Signup.propTypes = {
+SignupAsAdmin.propTypes = {
   location: PropTypes.object,
 };
 
-export default Signup;
+export default SignupAsAdmin;

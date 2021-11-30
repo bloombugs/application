@@ -43,6 +43,7 @@ class NavBar extends React.Component {
               <Dropdown.Menu>
                 <Dropdown.Item id="login-dropdown-sign-in" icon="user" text="Sign In" as={NavLink} exact to="/signin"/>
                 <Dropdown.Item id="login-dropdown-sign-up" icon="add user" text="Sign Up" as={NavLink} exact to="/signup"/>
+                <Dropdown.Item id="login-dropdown-admin-sign-up" icon="add user" text="Admin Sign Up" as={NavLink} exact to="/adminsignup"/>
               </Dropdown.Menu>
             </Dropdown>
           ) : (
@@ -53,7 +54,7 @@ class NavBar extends React.Component {
             </Dropdown>
           )}
         </Menu.Item>
-        <div className="ui hidden divider"></div>
+        <div className="ui hidden divider"/>
       </Menu>
     );
   }

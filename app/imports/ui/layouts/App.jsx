@@ -15,6 +15,7 @@ import EditReport from '../pages/EditReport';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
+import SignupAsAdmin from '../pages/SignupAsAdmin';
 import Signout from '../pages/Signout';
 import Distress from '../pages/Distress';
 import DistressForm from '../pages/DistressForm';
@@ -48,6 +49,7 @@ class App extends React.Component {
             <Route path="/birdsighting" component={BirdSighting}/>
             <Route path="/other" component={Other}/>
             <Route path="/signup" component={Signup}/>
+            <Route path="/adminsignup" component={SignupAsAdmin}/>
             <Route path="/signout" component={Signout}/>
             <Route path="/navbar" component={NavBar}/>
             <Route path="/infodistress" component={InfoDistress}/>
