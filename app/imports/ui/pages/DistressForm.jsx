@@ -115,21 +115,21 @@ class DistressForm extends React.Component {
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} model={this.state}>
             <Segment>
               <Header textAlign='center'> Contact Info</Header>
-              <TextField name='date' type='date' inputRef={this.myDate}/>
-              <TextField name='time' type='time' inputRef={this.myTime}/>
-              <TextField name='name' inputRef={this.myName}/>
-              <TextField name='phone' decimal={false} inputRef={this.myPhone}/>
+              <TextField id='distress-form-date' name='date' type='date' inputRef={this.myDate}/>
+              <TextField id='distress-form-time' name='time' type='time' inputRef={this.myTime}/>
+              <TextField id='distress-form-name' name='name' inputRef={this.myName}/>
+              <TextField id='distress-form-phone' name='phone' decimal={false} inputRef={this.myPhone}/>
               <SelectField name='animal'/>
-              <TextField name='location'/>
+              <TextField id='distress-form-location' name='location'/>
               <Button onClick={this.handleShow} type='button'>{this.state.showing ? 'Location set' : 'Get Location'}</Button>
               {this.state.showing && <Segment>
                 <ReactSVG src="/images/Oahu_NS_all.svg" onClick={this.handleLocation}/>
               </Segment>}
-              <LongTextField name='description' inputRef={this.myDescription}/>
+              <LongTextField id='distress-form-description' name='description' inputRef={this.myDescription}/>
               <Header as="h5">Please add photos of the animals or area to better help the volunteers.</Header>
               <TextField name='image' inputRef={this.myImage}/>
               <div className="ui hidden divider"></div>
-              <SubmitField value='Submit'/>
+              <SubmitField id='distress-form-submit' value='Submit'/>
               <ErrorsField/>
             </Segment>
           </AutoForm>
