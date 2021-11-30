@@ -7,11 +7,8 @@ import { Tracker } from 'meteor/tracker';
 import swal from 'sweetalert';
 import { TasksCollection } from '../../api/TasksCollection';
 
-const bfal = '/images/BlackFootAlbatross.jpg';
-const laal = '/images/Laysan.jpg';
-const stal = '/images/ShortTail-3.jpg';
 const brbo = '/images/Brownbooby.jpg';
-const rfbo = '/images/RedFootedBobby.jpg';
+const rfbo = '/images/RedFootedBooby.jpg';
 const wttr = '/images/WhiteTailed.jpg';
 const rttr = '/images/RedTailed.jpg';
 
@@ -23,14 +20,14 @@ class TaskForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { animalName: '', location: '', longitude: '', latitude: '' };
-    this.clickt1 = this.clickt1.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     this.schema = new SimpleSchema({
       text: String,
     }, { tracker: Tracker });
     TasksCollection.attachSchema(this.schema);
   }
 
-  clickt1(e) {
+  handleClick(e) {
     console.log(e.target);
     this.setState({ text: e.target.alt });
   }
@@ -61,24 +58,32 @@ class TaskForm extends React.Component {
       >
         <Grid centered container>
           <Grid.Row>
-            <Image
-              src={laal}
-              size='small'
-              alt='Laysan Albatross'
-              onClick={this.clickt1}
-            />
-            <Image
-              src={bfal}
-              size='small'
-              alt='Black Footed Albatross'
-              onClick={this.clickt1}
-            />
-            <Image
-              src={stal}
-              size='small'
-              alt='Short Tailed Albatross'
-              onClick={this.clickt1}
-            />
+            <div className="wrapper">
+              <div className="my-image-container">
+                <div className='bird-image'><Image onClick={this.handleClick} src='images/Laysan.jpg' width='200px' alt='Laysan Albatross'/></div>
+                <div className="bird-image"><Image onClick={this.handleClick} src='images/BlackFootAlbatross.jpg' width='200px' alt='Black Footed Albatross'/></div>
+                <div className="bird-image"><Image onClick={this.handleClick} src='images/ShortTail-3.jpg' width='200px' alt='Short Tailed Albatross'/></div>
+                <div className="bird-image"><Image onClick={this.handleClick} src='images/RedFootedBooby.jpg' width='200px' alt='Red Footed Booby'/></div>
+                <div className="bird-image"><Image onClick={this.handleClick} src='images/Brownbooby.jpg' width='200px' alt='Brown Booby'/></div>
+                <div className="bird-image"><Image onClick={this.handleClick} src='images/Bulwers-2.jpg' width='200px' alt="Bulwer's Petrel"/></div>
+                <div className="bird-image"><Image onClick={this.handleClick} src='images/BandRumpedStorm.jpg' width='200px' alt='Band Rumped Storm Petrel'/></div>
+                <div className="bird-image"><Image onClick={this.handleClick} src='images/BoninPetrel.jpg' width='200px' alt='Bonin Petrel'/></div>
+                <div className="bird-image"><Image onClick={this.handleClick} src='images/WedgeShearwater.jpg' width='200px' alt='Wedge Tailed Shearwater'/></div>
+                <div className="bird-image"><Image onClick={this.handleClick} src='images/ChristmasShearwater.jpg' width='200px' alt='Christmas Shearwater'/></div>
+                <div className="bird-image"><Image onClick={this.handleClick} src='images/NewellShearwater.jpg' width='200px' alt='Newell Shearwater'/></div>
+                <div className="bird-image"><Image onClick={this.handleClick} src='images/BlueNoddy.jpg' width='200px' alt='Blue Noddy'/></div>
+                <div className="bird-image"><Image onClick={this.handleClick} src='images/BrownNoddy-2.jpg' width='200px' alt='Brown Noddy'/></div>
+                <div className="bird-image"><Image onClick={this.handleClick} src='images/BlackNoddy.jpg' width='200px' alt='Black Noddy'/></div>
+                <div className="bird-image"><Image onClick={this.handleClick} src='images/WhiteTailed.jpg' width='200px' alt='White Tail Tropicbird'/></div>
+                <div className="bird-image"><Image onClick={this.handleClick} src='images/RedTailed.jpg' width='200px' alt='Red Tail Tropicbird'/></div>
+                <div className="bird-image"><Image onClick={this.handleClick} src='images/Great_frigatebird_male-2.jpg' width='200px' alt='Great frigatebird male'/></div>
+                <div className="bird-image"><Image onClick={this.handleClick} src='images/Great_frigatebird_female.jpg' width='200px' alt='Great frigatebird female'/></div>
+                <div className="bird-image"><Image onClick={this.handleClick} src='images/Whitetern.jpg' width='200px' alt='White Tern'/></div>
+                <div className="bird-image"><Image onClick={this.handleClick} src='images/GreyBackedTern.jpg' width='200px' alt='Grey Backed Tern'/></div>
+                <div className="bird-image"><Image onClick={this.handleClick} src='images/SootyTern.jpg' width='200px' alt='Sooty Tern'/></div>
+                <div className="bird-image"><Image onClick={this.handleClick} src='images/unknown_bird.png' width='200px' alt='Unknown Seabird'/></div>
+              </div>
+            </div>
           </Grid.Row>
           <Grid.Row>
             <Image
