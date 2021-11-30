@@ -52,7 +52,7 @@ class BirdSighting extends React.Component {
     this.myNumPeople = React.createRef();
     this.myImage = React.createRef();
     this.myMarkers = React.createRef();
-    this.state = { showing: true, latitude: '',
+    this.state = { showing: false, latitude: '',
       longitude: '', location: '', date: '' };
     this.handleClick = this.handleClick.bind(this);
     this.handleLocation = this.handleLocation.bind(this);
