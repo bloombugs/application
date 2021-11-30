@@ -13,16 +13,16 @@ class NavBar extends React.Component {
   render() {
     return (
       <Menu attached="top" borderless id="nav" className="ui stackable menu" style={{ background: 'white', border: 'none' }}>
-        <Menu.Item as={NavLink} activeClassName="" exact to="/">
+        <Menu.Item as={NavLink} id='landingPage' activeClassName="" exact to="/">
           <Image src={kahukai} size='tiny' alt='Kahukai app logo'/>
         </Menu.Item>
-        <Menu.Item as={NavLink} activeClassName="" exact to="/distress">
+        <Menu.Item as={NavLink} id='distressPage' activeClassName="" exact to="/distress">
           <Header as="h4">Distress Report</Header>
         </Menu.Item>
-        <Menu.Item as={NavLink} activeClassName="" exact to="/sighting">
+        <Menu.Item as={NavLink} id='sightingReportPage' activeClassName="" exact to="/sighting">
           <Header as="h4">Sighting Report</Header>
         </Menu.Item>
-        <Menu.Item as={NavLink} activeClassName="" exact to="/infodistress">
+        <Menu.Item as={NavLink} id='infoPage' activeClassName="" exact to="/infodistress">
           <Header as="h4">Info</Header>
         </Menu.Item>
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (

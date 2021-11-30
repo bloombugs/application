@@ -99,7 +99,7 @@ class DistressForm extends React.Component {
   render() {
     let fRef = null;
     return (
-      <Grid centered style={{ background: '#87acb5' }}>
+      <Grid centered style={{ background: '#87acb5' }} id='distressFormPage'>
         <Container><Grid.Column>
           <div className="ui hidden divider"></div>
           <Header as="h2" textAlign="center" style={{ color: 'white' }}>Distress Form</Header>

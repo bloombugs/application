@@ -21,4 +21,10 @@
 .bold {
   font-weight: bold;
 }
+#landing-header {
+  color: white;
+}
 
+.bottom-landing {
+  padding: 40px;
+}

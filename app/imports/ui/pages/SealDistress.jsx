@@ -7,7 +7,7 @@ const mnk = '/images/monkSeals.jpg';
 class SealDistress extends React.Component {
   render() {
     return (
-      <Grid textAlign='center' style={{ background: '#87acb5' }} >
+      <Grid id='sealInfoPage' textAlign='center' style={{ background: '#87acb5' }} >
         <Grid.Row verticalAlign='middle'>
           <Grid.Column width={14}>
             <Image src={mnk} size="medium" centered alt='Hawaiian monk seal and pup' />

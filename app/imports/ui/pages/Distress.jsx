@@ -27,7 +27,7 @@ class Distress extends React.Component {
             <hr/>
             <Button size='big' color='green' icon labelPosition='right'>
               <Icon name='file text'/>
-              <Link to="/distressform" style={{ color: 'white' }}>
+              <Link to="/distressform" id='distressFormPage' style={{ color: 'white' }}>
                 Click for Online Form
               </Link>
             </Button>

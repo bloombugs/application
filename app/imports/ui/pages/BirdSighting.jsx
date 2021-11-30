@@ -122,7 +122,7 @@ class BirdSighting extends React.Component {
   render() {
     let fRef = null;
     return (
-      <Grid centered style={{ background: '#87acb5' }}>
+      <Grid id='birdReportPage' centered style={{ background: '#87acb5' }}>
         <Container><Grid.Column>
           <Header as="h2" textAlign="center">Bird Sighting Form</Header>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} model={this.state}>

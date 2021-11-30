@@ -7,7 +7,7 @@ const dlnr = '/images/DLNR.png';
 class Other extends React.Component {
   render() {
     return (
-      <Grid textAlign='center' style={{ background: '#87acb5' }}>
+      <Grid id='otherReportPage' textAlign='center' style={{ background: '#87acb5' }}>
         <Grid.Row verticalAlign='middle'>
           <Grid.Column width={14}>
             <div className="ui hidden divider"></div>
