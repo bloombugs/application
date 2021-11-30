@@ -11,12 +11,12 @@ import { Report } from '../../api/report/Report';
 const bridge = new SimpleSchema2Bridge(Report.schema);
 
 /** Renders the Page for editing a single document. */
-class EditReport extends React.Component {
+class EditDistressReport extends React.Component {
 
   // On successful submit, insert the data.
   submit(data) {
-    const { date, name, phone, location, description, markers, behavior, numPeople, Submit, _id } = data;
-    Report.collection.update(_id, { $set: { date, name, phone, location, description, markers, behavior, numPeople, Submit } }, (error) => (error ?
+    const { date, time, animal, name, phone, location, latitude, longitude, description, image, Submit, _id } = data;
+    Report.collection.update(_id, { $set: { date, time, animal, name, phone, location, latitude, longitude, description, image, Submit } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Item updated successfully', 'success')));
   }
@@ -35,15 +35,17 @@ class EditReport extends React.Component {
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)} model={this.props.doc}>
             <Segment>
               <TextField name='date' type='date'/>
-              <SelectField name='name'/>
-              <TextField name='phone'/>
+              <TextField name='time' type='time'/>
+              <TextField name='name'/>
+              <TextField name='phone' decimal={false}/>
+              <SelectField name='animal'/>
               <TextField name='location'/>
+              <TextField name='latitude'/>
+              <TextField name='longitude'/>
               <TextField name='description'/>
-              <TextField name='markers'/>
-              <TextField name='behavior'/>
-              <SelectField name='numPeople'/>
+              <TextField name='image'/>
               <SubmitField value='Submit'/>
-              <HiddenField name='owner' />
+              <HiddenField name='owner'/>
             </Segment>
           </AutoForm>
         </Grid.Column>
@@ -53,7 +55,7 @@ class EditReport extends React.Component {
 }
 
 // Require the presence of a Report in the props object. Uniforms adds 'model' to the props, which we use.
-EditReport.propTypes = {
+EditDistressReport.propTypes = {
   doc: PropTypes.object,
   model: PropTypes.object,
   ready: PropTypes.bool.isRequired,
@@ -73,4 +75,4 @@ export default withTracker(({ match }) => {
     doc,
     ready,
   };
-})(EditReport);
+})(EditDistressReport);
