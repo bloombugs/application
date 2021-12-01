@@ -92,23 +92,21 @@ test('Test that info report page shows and the pages for the animals and other',
   await otherReportPage.isDisplayed(testController);
 });
 
-test('Test that admin signup and login works', async (testController) => {
-  await navBar.gotoAdminSignupPage(testController);
-  await signupAsAdminPage.signupUser(testController, adminCredentials.username, adminCredentials.password, adminCredentials.adminPassword);
-  await navBar.gotoSigninPage(testController);
-  await signinPage.signin(testController, adminCredentials.username, adminCredentials.password);
-  await navBar.isLoggedIn(testController, adminCredentials.username);
-});
-
-test('Test that admin report pages shows up via navbar', async (testController) => {
-  await navBar.gotoLandingPage(testController);
-  await landingPage.isDisplayed(testController);
-  await navBar.gotoBirdListReportAdminPage(testController);
-  await birdListReportAdminPage.isDisplayed(testController);
-  await navBar.gotoDistressListReportAdminPage(testController);
-  await distressListReportAdminPage.isDisplayed(testController);
-  await navBar.gotoSealListReportAdminPage(testController);
-  await sealListReportAdminPage.isDisplayed(testController);
-  await navBar.gotoTurtleListReportAdminPage(testController);
-  await turtleListReportAdminPage.isDisplayed(testController);
-});
+// test.only('Test that admin signup and login works', async (testController) => {
+//   await navBar.gotoAdminSignupPage(testController);
+//   await signupAsAdminPage.signupUser(testController, adminCredentials.username, adminCredentials.password, adminCredentials.adminPassword);
+//   await navBar.gotoSigninPage(testController);
+//   await signinPage.signin(testController, adminCredentials.username, adminCredentials.password);
+//   await navBar.isLoggedIn(testController, adminCredentials.username);
+// });
+//
+// test.only('Test that admin report pages shows up via navbar', async (testController) => {
+//   await navBar.gotoBirdListReportAdminPage(testController);
+//   await birdListReportAdminPage.isDisplayed(testController);
+//   await navBar.gotoDistressListReportAdminPage(testController);
+//   await distressListReportAdminPage.isDisplayed(testController);
+//   await navBar.gotoSealListReportAdminPage(testController);
+//   await sealListReportAdminPage.isDisplayed(testController);
+//   await navBar.gotoTurtleListReportAdminPage(testController);
+//   await turtleListReportAdminPage.isDisplayed(testController);
+// });
