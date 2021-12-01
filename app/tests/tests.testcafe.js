@@ -13,17 +13,17 @@ import { otherReportPage } from './otherReport.page';
 import { birdInfoPage } from './birdInfo.page';
 import { turtleInfoPage } from './turtleInfo.page';
 import { sealInfoPage } from './sealInfo.page';
-import { signupAsAdminPage } from './signupAsAdmin.page';
-import { birdListReportAdminPage } from './birdListReportAdmin.page';
-import { distressListReportAdminPage } from './distressListReportAdmin.page';
-import { sealListReportAdminPage } from './sealListReportAdmin.page';
-import { turtleListReportAdminPage } from './turtleListReportAdmin.page';
+// import { signupAsAdminPage } from './signupAsAdmin.page';
+// import { birdListReportAdminPage } from './birdListReportAdmin.page';
+// import { distressListReportAdminPage } from './distressListReportAdmin.page';
+// import { sealListReportAdminPage } from './sealListReportAdmin.page';
+// import { turtleListReportAdminPage } from './turtleListReportAdmin.page';
 
 /* global fixture:false, test:false */
 
 /** Credentials for one of the sample users defined in settings.development.json. */
 const credentials = { username: 'aaa@foo.com', password: 'changeme' };
-const adminCredentials = { username: 'bbb@foo.com', password: 'changeme', adminPassword: 'adminpassword' };
+// const adminCredentials = { username: 'bbb@foo.com', password: 'changeme', adminPassword: 'adminpassword' };
 // const form = { name: 'john foo', phone: '8081234567', location: 'pipeline', description: 'This is a test' };
 
 fixture('meteor-application-template-react localhost test with default db')
