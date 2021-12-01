@@ -65,22 +65,22 @@ class NavBar {
 
   /** Go to bird list report admin page */
   async gotoBirdListReportAdminPage(testController) {
-    await testController.click('#bird-list-admin-page');
+    await testController.click('#bird-admin-page');
   }
 
   /** Go to turtle list report admin page */
   async gotoTurtleListReportAdminPage(testController) {
-    await testController.click('#turtle-list-admin-page');
+    await testController.click('#turtle-admin-page');
   }
 
   /** Go to seal list report admin page */
   async gotoSealListReportAdminPage(testController) {
-    await testController.click('#seal-list-admin-page');
+    await testController.click('#seal-admin-page');
   }
 
   /** Go to distress list report admin page */
   async gotoDistressListReportAdminPage(testController) {
-    await testController.click('#distress-list-admin-page');
+    await testController.click('#distress-admin-page');
   }
 
 }
