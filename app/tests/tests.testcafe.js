@@ -19,7 +19,7 @@ import { signupAsAdminPage } from './signupAsAdmin.page';
 
 /** Credentials for one of the sample users defined in settings.development.json. */
 const credentials = { username: 'john@foo.com', password: 'changeme' };
-const adminCredentials = { username: 'admin@foo.com', password: 'changeme', adminPassword: 'adminpassword' };
+const adminCredentials = { username: 'aaa@foo.com', password: 'changeme', adminPassword: 'adminpassword' };
 // const form = { name: 'john foo', phone: '8081234567', location: 'pipeline', description: 'This is a test' };
 
 fixture('meteor-application-template-react localhost test with default db')
