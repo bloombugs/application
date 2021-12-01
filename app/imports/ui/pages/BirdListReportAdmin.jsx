@@ -17,7 +17,7 @@ class BirdListReportAdmin extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     return (
-      <div className="ui fluid vertical menu">
+      <div id='bird-list-admin-page' className="ui fluid vertical menu">
         <Header as="h2" textAlign="center">Seabird Reports</Header>
         <BirdTable reports={this.props.reports} />
       </div>

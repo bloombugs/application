@@ -14,12 +14,16 @@ import { birdInfoPage } from './birdInfo.page';
 import { turtleInfoPage } from './turtleInfo.page';
 import { sealInfoPage } from './sealInfo.page';
 import { signupAsAdminPage } from './signupAsAdmin.page';
+import { birdListReportAdminPage } from './birdListReportAdmin.page';
+import { distressListReportAdminPage } from './distressListReportAdmin.page';
+import { sealListReportAdminPage } from './sealListReportAdmin.page';
+import { turtleListReportAdminPage } from './turtleListReportAdmin.page';
 
 /* global fixture:false, test:false */
 
 /** Credentials for one of the sample users defined in settings.development.json. */
 const credentials = { username: 'john@foo.com', password: 'changeme' };
-const adminCredentials = { username: 'admin@foo.com', password: 'changeme', adminPassword: 'adminpassword' };
+const adminCredentials = { username: 'aaa@foo.com', password: 'changeme', adminPassword: 'adminpassword' };
 // const form = { name: 'john foo', phone: '8081234567', location: 'pipeline', description: 'This is a test' };
 
 fixture('meteor-application-template-react localhost test with default db')
@@ -88,10 +92,23 @@ test('Test that info report page shows and the pages for the animals and other',
   await otherReportPage.isDisplayed(testController);
 });
 
-test.only('Test that admin signup and login works', async (testController) => {
+test('Test that admin signup and login works', async (testController) => {
   await navBar.gotoAdminSignupPage(testController);
   await signupAsAdminPage.signupUser(testController, adminCredentials.username, adminCredentials.password, adminCredentials.adminPassword);
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, adminCredentials.username, adminCredentials.password);
   await navBar.isLoggedIn(testController, adminCredentials.username);
+});
+
+test('Test that admin report pages shows up via navbar', async (testController) => {
+  await navBar.gotoLandingPage(testController);
+  await landingPage.isDisplayed(testController);
+  await navBar.gotoBirdListReportAdminPage(testController);
+  await birdListReportAdminPage.isDisplayed(testController);
+  await navBar.gotoDistressListReportAdminPage(testController);
+  await distressListReportAdminPage.isDisplayed(testController);
+  await navBar.gotoSealListReportAdminPage(testController);
+  await sealListReportAdminPage.isDisplayed(testController);
+  await navBar.gotoTurtleListReportAdminPage(testController);
+  await turtleListReportAdminPage.isDisplayed(testController);
 });
