@@ -46,7 +46,7 @@ class SignupAsAdmin extends React.Component {
       return <Redirect to={from}/>;
     }
     return (
-      <Container id="admin signup-page">
+      <Container id="admin-signup-page">
         <Grid textAlign="center" centered columns={2}>
           <Grid.Row verticalAlign='middle'>
             <Grid.Column>

@@ -13,11 +13,13 @@ import { otherReportPage } from './otherReport.page';
 import { birdInfoPage } from './birdInfo.page';
 import { turtleInfoPage } from './turtleInfo.page';
 import { sealInfoPage } from './sealInfo.page';
+import { signupAsAdminPage } from './signupAsAdmin.page';
 
 /* global fixture:false, test:false */
 
 /** Credentials for one of the sample users defined in settings.development.json. */
 const credentials = { username: 'john@foo.com', password: 'changeme' };
+const adminCredentials = { username: 'admin@foo.com', password: 'changeme', adminPassword: 'adminpassword' };
 // const form = { name: 'john foo', phone: '8081234567', location: 'pipeline', description: 'This is a test' };
 
 fixture('meteor-application-template-react localhost test with default db')
@@ -84,4 +86,12 @@ test('Test that info report page shows and the pages for the animals and other',
   await infoPage.isDisplayed(testController);
   await infoPage.gotoOtherInfoPage(testController);
   await otherReportPage.isDisplayed(testController);
+});
+
+test.only('Test that admin signup and login works', async (testController) => {
+  await navBar.gotoAdminSignupPage(testController);
+  await signupAsAdminPage.signupUser(testController, adminCredentials.username, adminCredentials.password, adminCredentials.adminPassword);
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, adminCredentials.username, adminCredentials.password);
+  await navBar.isLoggedIn(testController, adminCredentials.username);
 });

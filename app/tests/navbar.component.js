@@ -36,6 +36,13 @@ class NavBar {
     await testController.click('#login-dropdown-sign-up');
   }
 
+  /** Pull down login menu, go to sign up page. */
+  async gotoAdminSignupPage(testController) {
+    await this.ensureLogout(testController);
+    await testController.click('#login-dropdown');
+    await testController.click('#login-dropdown-admin-sign-up');
+  }
+
   /** Go to landing page via navbar */
   async gotoLandingPage(testController) {
     await testController.click('#landingPage');
