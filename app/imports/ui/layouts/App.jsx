@@ -11,7 +11,7 @@ import BirdListReportAdmin from '../pages/BirdListReportAdmin';
 import SealListReportAdmin from '../pages/SealListReportAdmin';
 import TurtleListReportAdmin from '../pages/TurtleListReportAdmin';
 import DistressListReportAdmin from '../pages/DistressListReportAdmin';
-import EditReport from '../pages/EditReport';
+import EditDistressReport from '../pages/EditDistressReport';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
@@ -56,13 +56,14 @@ class App extends React.Component {
             <Route path="/birddistress" component={BirdDistress}/>
             <Route path="/turtledistress" component={TurtleDistress}/>
             <Route path="/sealdistress" component={SealDistress}/>
+            <Route path="/editreport" component={EditDistressReport}/>
             <Route path="/taskform" component={TaskForm}/>
             <Route path="/testpage" component={TestPage}/>
             <AdminProtectedRoute path="/birdadminlist" component={BirdListReportAdmin}/>
             <AdminProtectedRoute path="/sealadminlist" component={SealListReportAdmin}/>
             <AdminProtectedRoute path="/turtleadminlist" component={TurtleListReportAdmin}/>
             <AdminProtectedRoute path="/distressadminlist" component={DistressListReportAdmin}/>
-            <ProtectedRoute path="/edit/:_id" component={EditReport}/>
+            <ProtectedRoute path="/edit/:_id" component={EditDistressReport}/>
             <Route component={NotFound}/>
           </Switch>
           <Footer/>

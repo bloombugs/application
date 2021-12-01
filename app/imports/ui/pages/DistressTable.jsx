@@ -3,6 +3,7 @@ import DataTable from 'react-data-table-component';
 import DataTableExtensions from 'react-data-table-component-extensions';
 import PropTypes from 'prop-types';
 import '../../../client/dataTables.css';
+import { Link } from 'react-router-dom';
 
 const columns = [
   { name: 'Date', selector: row => row.date, sortable: true },
@@ -15,6 +16,7 @@ const columns = [
   { name: 'Longitude', selector: row => row.longitude, sortable: true },
   { name: 'Description', selector: row => row.description, sortable: true },
   { name: 'Image', selector: row => row.image, sortable: true },
+  { name: 'Edit', selector: row => <Link to={`/edit/${row._id}`}>Edit</Link> },
 ];
 
 export const DistressTable = (props) => {
