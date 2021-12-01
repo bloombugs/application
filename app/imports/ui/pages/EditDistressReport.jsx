@@ -6,6 +6,7 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
+import { Roles } from 'meteor/alanning:roles';
 import { DistressReport } from '../../api/report/DistressReport';
 
 const bridge = new SimpleSchema2Bridge(DistressReport.schema);
@@ -66,7 +67,8 @@ export default withTracker(({ match }) => {
   // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
   const documentId = match.params._id;
   // Get access to Report documents.
-  const subscription = Meteor.subscribe(DistressReport.userPublicationName);
+  const subscription = Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+    Meteor.subscribe(DistressReport.adminPublicationName)) : (Meteor.subscribe(DistressReport.userPublicationName));
   // Determine if the subscription is ready
   const ready = subscription.ready();
   // Get the document

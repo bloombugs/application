@@ -83,7 +83,7 @@ class DistressForm extends React.Component {
   // On submit, insert the data.
   submit(data, formRef) {
     const { date, time, animal, name, phone, location, latitude, longitude, description, image } = data;
-    const owner = name;
+    const owner = Meteor.user().username;
     DistressReport.collection.insert({ date, time, animal, name, phone, location, latitude, longitude, description, image, owner },
       (error) => {
         if (error) {
