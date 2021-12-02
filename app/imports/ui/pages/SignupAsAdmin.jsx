@@ -43,6 +43,15 @@ class SignupAsAdmin extends React.Component {
     const { from } = this.props.location.state || { from: { pathname: '/' } };
     // if correct authentication, redirect to from: page instead of signup screen
     if (this.state.redirectToReferer) {
+      Meteor.logout();
+      const { email, password } = this.state;
+      Meteor.loginWithPassword(email, password, (err) => {
+        if (err) {
+          this.setState({ error: err.reason });
+        } else {
+          this.setState({ error: '', redirectToReferer: true });
+        }
+      });
       return <Redirect to={from}/>;
     }
     return (
