@@ -30,6 +30,7 @@ import TurtleDistress from '../pages/TurtleDistress';
 import SealDistress from '../pages/SealDistress';
 import TaskForm from '../pages/TaskForm';
 import TestPage from '../pages/testPage';
+import UserListReport from '../pages/UserListReport';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -59,6 +60,7 @@ class App extends React.Component {
             <Route path="/editreport" component={EditDistressReport}/>
             <Route path="/taskform" component={TaskForm}/>
             <Route path="/testpage" component={TestPage}/>
+            <ProtectedRoute path="/userreports" component={UserListReport}/>
             <AdminProtectedRoute path="/birdadminlist" component={BirdListReportAdmin}/>
             <AdminProtectedRoute path="/sealadminlist" component={SealListReportAdmin}/>
             <AdminProtectedRoute path="/turtleadminlist" component={TurtleListReportAdmin}/>

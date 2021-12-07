@@ -101,7 +101,8 @@ class SealSighting extends React.Component {
   // On submit, insert the data.
   submit(data, formRef) {
     const { date, time, animalName, name, phone, location, latitude, longitude, description, markers, numPeople, image } = data;
-    const owner = name;
+    const username = Meteor.user().username;
+    const owner = username;
     SealReport.collection.insert({ date, time, animalName, name, phone, location, latitude, longitude, description, markers, numPeople, image, owner },
       (error) => {
         if (error) {
