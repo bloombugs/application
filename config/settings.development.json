@@ -135,7 +135,157 @@
   ],
 
   "defaultTurtle": [
-
+    {
+      "date": "11/17/2021",
+      "time": "2:53 PM",
+      "animalName": "Green Sea Turtle",
+      "name": "Smith Jones",
+      "phone": "808-429-3828",
+      "location": "Makaha Beach Park",
+      "latitude": 21.47641328,
+      "longitude": -158.2203816,
+      "description": "The turtle is sleeping on the sand.",
+      "markers": {
+        "type": "Tags"
+      },
+      "numPeople": {
+        "type": "0 - 5"
+      },
+      "image": "https://live.staticflickr.com/3030/2366173318_ffc4c985f2_b.jpg",
+      "owner": "smith@foo.com"
+    },
+    {
+      "date": "12/01/2021",
+      "time": "5:21 PM",
+      "animalName": "Hawksbill Sea Turtle",
+      "name": "Johnathan Hills",
+      "phone": "808-583-3928",
+      "location": "Pokai Beach",
+      "latitude": 21.44379622,
+      "longitude": -158.1891588,
+      "description": "The turtle is sleeping on the sand.",
+      "markers": {
+        "type": "Satellite"
+      },
+      "numPeople": {
+        "type": "0 - 5"
+      },
+      "image": "https://www.marine.science/app/uploads/2019/06/2018-Dec.-Sleeping-hawksbill.-DG-BIOT.-Nicole-Esteban.jpg",
+      "owner": "john@foo.com"
+    },
+    {
+      "date": "12/03/2021",
+      "time": "4:27 PM",
+      "animalName": "Green Sea Turtle",
+      "name": "Frank Adams",
+      "phone": "808-938-2948",
+      "location": "Kaawa Beach",
+      "latitude": 21.54896943,
+      "longitude": -157.8463083,
+      "description": "The turtle is eating on the sand.",
+      "markers": {
+        "type": "Unknown"
+      },
+      "numPeople": {
+        "type": "0 - 5"
+      },
+      "image": "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/3-honu-hawaiian-green-sea-turtle-on-the-beach-in-hawaii-nature-photographer.jpg",
+      "owner": "frank@foo.com"
+    },
+    {
+      "date": "11/16/2021",
+      "time": "3:11 PM",
+      "animalName": "Green Sea Turtle",
+      "name": "Johnathan Hills",
+      "phone": "808-583-3928",
+      "location": "Hau'ula Beach",
+      "latitude": 21.60718287,
+      "longitude": -157.9051358,
+      "description": "The turtle is nesting on the sand.",
+      "markers": {
+        "type": "Unknown"
+      },
+      "numPeople": {
+        "type": "5 - 10"
+      },
+      "image": "https://www.worldlandtrust.org/wp-content/uploads/2017/12/Green_Sea_Turtle_nesting_at_sunrise.jpg",
+      "owner": "john@foo.com"
+    },
+    {
+      "date": "11/29/2021",
+      "time": "3:25 PM",
+      "animalName": "Hawksbill Sea Turtle",
+      "name": "Smith Jones",
+      "phone": "808-429-3828",
+      "location": "Laniloa Beach",
+      "latitude": 21.64343099,
+      "longitude": -157.9189677,
+      "description": "The turtle is resting.",
+      "markers": {
+        "type": "Unknown"
+      },
+      "numPeople": {
+        "type": "0 - 5"
+      },
+      "image": "https://thumbs.dreamstime.com/b/green-sea-turtle-beach-21937745.jpg",
+      "owner": "smith@foo.com"
+    },
+    {
+      "date": "11/21/2021",
+      "time": "2:17 PM",
+      "animalName": "Green Sea Turtle",
+      "name": "Frank Adams",
+      "phone": "808-938-2948",
+      "location": "Kaiaka Bay Beach",
+      "latitude": 21.58610349,
+      "longitude": -158.1176929,
+      "description": "The turtle is walking on the sand.",
+      "markers": {
+        "type": "Satellite"
+      },
+      "numPeople": {
+        "type": "5 - 10"
+      },
+      "image": "https://media.sciencephoto.com/image/c0117813/800wm/C0117813-Green_Sea_Turtles_with_GPS.jpg",
+      "owner": "frank@foo.com"
+    },
+    {
+      "date": "12/05/2021",
+      "time": "3:23 PM",
+      "animalName": "Green Sea Turtle",
+      "name": "Frank Adams",
+      "phone": "808-938-2948",
+      "location": "Polo Beach",
+      "latitude": 21.57957637,
+      "longitude": -158.1601883,
+      "description": "The turtle is sleeping on the sand.",
+      "markers": {
+        "type": "Unknown"
+      },
+      "numPeople": {
+        "type": "0 - 5"
+      },
+      "image": "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/green-sea-turtle-hawaii-h-leschmann.jpg",
+      "owner": "frank@foo.com"
+    },
+    {
+      "date": "12/06/2021",
+      "time": "7:06 AM",
+      "animalName": "Unknown Sea Turtle",
+      "name": "Johnathan Hills",
+      "phone": "808-583-3928",
+      "location": "Magic Island",
+      "latitude": 21.28441618,
+      "longitude": -157.846503,
+      "description": "The turtle is crawling on the sand.",
+      "markers": {
+        "type": "Unknown"
+      },
+      "numPeople": {
+        "type": "0 - 5"
+      },
+      "image": "https://images.fineartamerica.com/images-medium-large/hawaiian-green-sea-turtle-crawling-ashore-2-tammy-wolfe.jpg",
+      "owner": "john@foo.com"
+    }
   ]
-
 }
