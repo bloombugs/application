@@ -24,5 +24,118 @@
     }
   ],
 
-  "public": {"theAdminPassword": "adminpassword"}
+  "public": {"theAdminPassword": "adminpassword"},
+
+  "defaultDistress": [
+    {
+      "date": "11/08/2021",
+      "time": "11:40 AM",
+      "name": "Johnathan Hills",
+      "phone": "808-583-3928",
+      "animal": {
+        "type": "Seal"
+      },
+      "location": "Kualoa Beach",
+      "latitude": 21.53562329,
+      "longitude": -157.8394155,
+      "description": "The seal is bleeding.",
+      "image": "https://i1.wp.com/www.conservewildlifenj.org/blog/wp-content/uploads/2011/11/OG_seal21.jpg",
+      "owner": "john@foo.com"
+    },
+    {
+      "date": "11/11/2021",
+      "time": "9:13 AM",
+      "name": "Frank Adams",
+      "phone": "808-938-2948",
+      "animal": {
+        "type": "Turtle"
+      },
+      "location": "Swanzy Beach",
+      "latitude": 21.55750757,
+      "longitude": -157.8538549,
+      "description": "The turtle has a net around it.",
+      "image": "https://les.mitsubishielectric.co.uk/assets/FeaturedImages/205283e474/090-plastic-in-ocean-turtle.jpg",
+      "owner": "frank@foo.com"
+    },
+    {
+      "date": "10/18/2021",
+      "time": "8:58 AM",
+      "name": "Smith Jones",
+      "phone": "808-429-3828",
+      "animal": {
+        "type": "Bird"
+      },
+      "location": "Mokuleia Beach",
+      "latitude": 21.58053366,
+      "longitude": -158.1529791,
+      "description": "The bird has a hurt wing.",
+      "image": "https://www.newhopeaudubon.org/wp-content/uploads/2017/08/Albatross-Wandering-12-1024x681.jpg",
+      "owner": "smith@foo.com"
+    },
+    {
+      "date": "11/22/2021",
+      "time": "4:22 PM",
+      "name": "Tom Lopez",
+      "phone": "808-298-8538",
+      "animal": {
+        "type": "Seal"
+      },
+      "location": "Kahala Beach",
+      "latitude": 21.26920588,
+      "longitude": -157.7769723,
+      "description": "The seal has a wound.",
+      "image": "http://marinediscovery.co.uk/blog/wp-content/uploads/2015/03/grey-seal-injured.jpg",
+      "owner": "adminBaker@foo.com"
+    },
+    {
+      "date": "11/05/2021",
+      "time": "1:31 PM",
+      "name": "Sam Higa",
+      "phone": "808-102-1983",
+      "animal": {
+        "type": "Turtle"
+      },
+      "location": "Ala Moana Beach",
+      "latitude": 21.2900924,
+      "longitude": -157.8526183,
+      "description": "The turtle has plastic around it.",
+      "image": "http://cleanmalaysia.com/wp-content/uploads/2017/12/plasticbag-790x444.jpg",
+      "owner": "adminMason@foo.com"
+    },
+    {
+      "date": "11/29/2021",
+      "time": "2:17 PM",
+      "name": "Johnathan Hills",
+      "phone": "808-583-3928",
+      "animal": {
+        "type": "Seal"
+      },
+      "location": "White Plains Beach",
+      "latitude": 21.30357332,
+      "longitude": -158.0452274,
+      "description": "The seal has a net around it.",
+      "image": "https://dkt6rvnu67rqj.cloudfront.net/cdn/ff/QWxvF6AAJ4iLPvtSK9K9s93KNomsiDCzrvlCJ0K2ZmI/1579013287/public/styles/max_1000/public/media/int_files/a_hawaiian_monk_seal_entangled_in_marine_debris.jpg?itok=e8zkmIsE",
+      "owner": "john@foo.com"
+    },
+    {
+      "date": "10/26/2021",
+      "time": "7:32 AM",
+      "name": "Smith Jones",
+      "phone": "808-429-3828",
+      "animal": {
+        "type": "Seal"
+      },
+      "location": "Ko Olina Lagoon 4",
+      "latitude": 21.32835153,
+      "longitude": -158.1220136,
+      "description": "The seal has plastic around it.",
+      "image": "https://www.monachus-guardian.org/images06/hawms01.jpg",
+      "owner": "smith@foo.com"
+    }
+  ],
+
+  "defaultTurtle": [
+
+  ]
+
 }
