@@ -13,6 +13,7 @@ import { otherReportPage } from './otherReport.page';
 import { birdInfoPage } from './birdInfo.page';
 import { turtleInfoPage } from './turtleInfo.page';
 import { sealInfoPage } from './sealInfo.page';
+import { userListReportPage } from './userListReport.page';
 // import { signupAsAdminPage } from './signupAsAdmin.page';
 // import { birdListReportAdminPage } from './birdListReportAdmin.page';
 // import { distressListReportAdminPage } from './distressListReportAdmin.page';
@@ -38,10 +39,11 @@ test('Test that signup works', async (testController) => {
   await signupPage.signupUser(testController, credentials.username, credentials.password);
 });
 
-test('Test that signin and signout work', async (testController) => {
+test('Test that signin and signout work and user list report page', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.isLoggedIn(testController, credentials.username);
+  await navBar.gotoUserListReportPage(testController);
   await navBar.logout(testController);
   await signoutPage.isDisplayed(testController);
 });

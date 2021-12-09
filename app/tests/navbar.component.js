@@ -83,6 +83,11 @@ class NavBar {
     await testController.click('#distress-admin-page');
   }
 
+  /** Go to user list report page */
+  async gotoUserListReportPage(testController) {
+    await testController.click('#user-list-report-page');
+  }
+
 }
 
 export const navBar = new NavBar();
