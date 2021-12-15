@@ -7,8 +7,8 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Roles } from 'meteor/alanning:roles';
-import { DistressReport } from '../../api/report/DistressReport';
 import { NavLink } from 'react-router-dom';
+import { DistressReport } from '../../api/report/DistressReport';
 
 const bridge = new SimpleSchema2Bridge(DistressReport.schema);
 
@@ -35,9 +35,9 @@ class DeleteDistressReport extends React.Component {
         <Grid.Column>
           <Header as="h2" textAlign="center">Delete Report</Header>
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)} model={this.props.doc}>
-            <Segment>
+            <Segment className="deleteSegment">
               <SubmitField value='Delete'/>
-              <Button as={NavLink} className="infoButton" exact to="/distressadminlist">Cancel</Button>
+              <Button as={NavLink} exact to="/distressadminlist">Cancel</Button>
               <HiddenField name='owner'/>
             </Segment>
           </AutoForm>

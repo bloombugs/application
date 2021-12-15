@@ -1,15 +1,504 @@
 {
   "defaultAccounts": [
     {
-      "email": "admin@foo.com",
+      "email": "adminBaker@foo.com",
+      "password": "changeme",
+      "role": "admin"
+    },
+    {
+      "email": "adminMason@foo.com",
       "password": "changeme",
       "role": "admin"
     },
     {
       "email": "john@foo.com",
       "password": "changeme"
+    },
+    {
+      "email": "frank@foo.com",
+      "password": "changeme"
+    },
+    {
+      "email": "smith@foo.com",
+      "password": "changeme"
     }
   ],
 
-  "public": {"theAdminPassword": "adminpassword"}
+  "public": {"theAdminPassword": "adminpassword"},
+
+  "defaultDistress": [
+    {
+      "date": "11/08/2021",
+      "time": "11:40 AM",
+      "name": "Johnathan Hills",
+      "phone": "808-583-3928",
+      "animal": {
+        "type": "Seal"
+      },
+      "location": "Kualoa Beach",
+      "latitude": 21.53562329,
+      "longitude": -157.8394155,
+      "description": "The seal is bleeding.",
+      "image": "https://i1.wp.com/www.conservewildlifenj.org/blog/wp-content/uploads/2011/11/OG_seal21.jpg",
+      "owner": "john@foo.com"
+    },
+    {
+      "date": "11/11/2021",
+      "time": "9:13 AM",
+      "name": "Frank Adams",
+      "phone": "808-938-2948",
+      "animal": {
+        "type": "Turtle"
+      },
+      "location": "Swanzy Beach",
+      "latitude": 21.55750757,
+      "longitude": -157.8538549,
+      "description": "The turtle has a net around it.",
+      "image": "https://les.mitsubishielectric.co.uk/assets/FeaturedImages/205283e474/090-plastic-in-ocean-turtle.jpg",
+      "owner": "frank@foo.com"
+    },
+    {
+      "date": "10/18/2021",
+      "time": "8:58 AM",
+      "name": "Smith Jones",
+      "phone": "808-429-3828",
+      "animal": {
+        "type": "Bird"
+      },
+      "location": "Mokuleia Beach",
+      "latitude": 21.58053366,
+      "longitude": -158.1529791,
+      "description": "The bird has a hurt wing.",
+      "image": "https://www.newhopeaudubon.org/wp-content/uploads/2017/08/Albatross-Wandering-12-1024x681.jpg",
+      "owner": "smith@foo.com"
+    },
+    {
+      "date": "11/22/2021",
+      "time": "4:22 PM",
+      "name": "Tom Lopez",
+      "phone": "808-298-8538",
+      "animal": {
+        "type": "Seal"
+      },
+      "location": "Kahala Beach",
+      "latitude": 21.26920588,
+      "longitude": -157.7769723,
+      "description": "The seal has a wound.",
+      "image": "http://marinediscovery.co.uk/blog/wp-content/uploads/2015/03/grey-seal-injured.jpg",
+      "owner": "adminBaker@foo.com"
+    },
+    {
+      "date": "11/05/2021",
+      "time": "1:31 PM",
+      "name": "Sam Higa",
+      "phone": "808-102-1983",
+      "animal": {
+        "type": "Turtle"
+      },
+      "location": "Ala Moana Beach",
+      "latitude": 21.2900924,
+      "longitude": -157.8526183,
+      "description": "The turtle has plastic around it.",
+      "image": "http://cleanmalaysia.com/wp-content/uploads/2017/12/plasticbag-790x444.jpg",
+      "owner": "adminMason@foo.com"
+    },
+    {
+      "date": "11/29/2021",
+      "time": "2:17 PM",
+      "name": "Johnathan Hills",
+      "phone": "808-583-3928",
+      "animal": {
+        "type": "Seal"
+      },
+      "location": "White Plains Beach",
+      "latitude": 21.30357332,
+      "longitude": -158.0452274,
+      "description": "The seal has a net around it.",
+      "image": "https://dkt6rvnu67rqj.cloudfront.net/cdn/ff/QWxvF6AAJ4iLPvtSK9K9s93KNomsiDCzrvlCJ0K2ZmI/1579013287/public/styles/max_1000/public/media/int_files/a_hawaiian_monk_seal_entangled_in_marine_debris.jpg?itok=e8zkmIsE",
+      "owner": "john@foo.com"
+    },
+    {
+      "date": "10/26/2021",
+      "time": "7:32 AM",
+      "name": "Smith Jones",
+      "phone": "808-429-3828",
+      "animal": {
+        "type": "Seal"
+      },
+      "location": "Ko Olina Lagoon 4",
+      "latitude": 21.32835153,
+      "longitude": -158.1220136,
+      "description": "The seal has plastic around it.",
+      "image": "https://www.monachus-guardian.org/images06/hawms01.jpg",
+      "owner": "smith@foo.com"
+    }
+  ],
+
+  "defaultTurtle": [
+    {
+      "date": "11/17/2021",
+      "time": "2:53 PM",
+      "animalName": "Green Sea Turtle",
+      "name": "Smith Jones",
+      "phone": "808-429-3828",
+      "location": "Makaha Beach Park",
+      "latitude": 21.47641328,
+      "longitude": -158.2203816,
+      "description": "The turtle is sleeping on the sand.",
+      "markers": {
+        "type": "Tags"
+      },
+      "numPeople": {
+        "type": "0 - 5"
+      },
+      "image": "https://live.staticflickr.com/3030/2366173318_ffc4c985f2_b.jpg",
+      "owner": "smith@foo.com"
+    },
+    {
+      "date": "12/01/2021",
+      "time": "5:21 PM",
+      "animalName": "Hawksbill Sea Turtle",
+      "name": "Johnathan Hills",
+      "phone": "808-583-3928",
+      "location": "Pokai Beach",
+      "latitude": 21.44379622,
+      "longitude": -158.1891588,
+      "description": "The turtle is sleeping on the sand.",
+      "markers": {
+        "type": "Satellite"
+      },
+      "numPeople": {
+        "type": "0 - 5"
+      },
+      "image": "https://www.marine.science/app/uploads/2019/06/2018-Dec.-Sleeping-hawksbill.-DG-BIOT.-Nicole-Esteban.jpg",
+      "owner": "john@foo.com"
+    },
+    {
+      "date": "12/03/2021",
+      "time": "4:27 PM",
+      "animalName": "Green Sea Turtle",
+      "name": "Frank Adams",
+      "phone": "808-938-2948",
+      "location": "Kaawa Beach",
+      "latitude": 21.54896943,
+      "longitude": -157.8463083,
+      "description": "The turtle is eating on the sand.",
+      "markers": {
+        "type": "Unknown"
+      },
+      "numPeople": {
+        "type": "0 - 5"
+      },
+      "image": "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/3-honu-hawaiian-green-sea-turtle-on-the-beach-in-hawaii-nature-photographer.jpg",
+      "owner": "frank@foo.com"
+    },
+    {
+      "date": "11/16/2021",
+      "time": "3:11 PM",
+      "animalName": "Green Sea Turtle",
+      "name": "Johnathan Hills",
+      "phone": "808-583-3928",
+      "location": "Hau'ula Beach",
+      "latitude": 21.60718287,
+      "longitude": -157.9051358,
+      "description": "The turtle is nesting on the sand.",
+      "markers": {
+        "type": "Unknown"
+      },
+      "numPeople": {
+        "type": "5 - 10"
+      },
+      "image": "https://www.worldlandtrust.org/wp-content/uploads/2017/12/Green_Sea_Turtle_nesting_at_sunrise.jpg",
+      "owner": "john@foo.com"
+    },
+    {
+      "date": "11/29/2021",
+      "time": "3:25 PM",
+      "animalName": "Hawksbill Sea Turtle",
+      "name": "Smith Jones",
+      "phone": "808-429-3828",
+      "location": "Laniloa Beach",
+      "latitude": 21.64343099,
+      "longitude": -157.9189677,
+      "description": "The turtle is resting.",
+      "markers": {
+        "type": "Unknown"
+      },
+      "numPeople": {
+        "type": "0 - 5"
+      },
+      "image": "https://thumbs.dreamstime.com/b/green-sea-turtle-beach-21937745.jpg",
+      "owner": "smith@foo.com"
+    },
+    {
+      "date": "11/21/2021",
+      "time": "2:17 PM",
+      "animalName": "Green Sea Turtle",
+      "name": "Frank Adams",
+      "phone": "808-938-2948",
+      "location": "Kaiaka Bay Beach",
+      "latitude": 21.58610349,
+      "longitude": -158.1176929,
+      "description": "The turtle is walking on the sand.",
+      "markers": {
+        "type": "Satellite"
+      },
+      "numPeople": {
+        "type": "5 - 10"
+      },
+      "image": "https://media.sciencephoto.com/image/c0117813/800wm/C0117813-Green_Sea_Turtles_with_GPS.jpg",
+      "owner": "frank@foo.com"
+    },
+    {
+      "date": "12/05/2021",
+      "time": "3:23 PM",
+      "animalName": "Green Sea Turtle",
+      "name": "Frank Adams",
+      "phone": "808-938-2948",
+      "location": "Polo Beach",
+      "latitude": 21.57957637,
+      "longitude": -158.1601883,
+      "description": "The turtle is sleeping on the sand.",
+      "markers": {
+        "type": "Unknown"
+      },
+      "numPeople": {
+        "type": "0 - 5"
+      },
+      "image": "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/green-sea-turtle-hawaii-h-leschmann.jpg",
+      "owner": "frank@foo.com"
+    },
+    {
+      "date": "12/06/2021",
+      "time": "7:06 AM",
+      "animalName": "Unknown Sea Turtle",
+      "name": "Johnathan Hills",
+      "phone": "808-583-3928",
+      "location": "Magic Island",
+      "latitude": 21.28441618,
+      "longitude": -157.846503,
+      "description": "The turtle is crawling on the sand.",
+      "markers": {
+        "type": "Unknown"
+      },
+      "numPeople": {
+        "type": "0 - 5"
+      },
+      "image": "https://images.fineartamerica.com/images-medium-large/hawaiian-green-sea-turtle-crawling-ashore-2-tammy-wolfe.jpg",
+      "owner": "john@foo.com"
+    }
+  ],
+  "defaultSeal": [
+    {
+      "date": "12/10/2021",
+      "time": "9:35 AM",
+      "animalName": "Adult Hawaiian Monk Seal",
+      "name": "Mark Wallace",
+      "phone": "808-492-4928",
+      "location": "Kaimana Beach",
+      "latitude": 21.26338973,
+      "longitude": -157.8216755,
+      "description": "Sleeping. N18.",
+      "markers": {
+        "type": "Applied Bleach"
+      },
+      "numPeople": {
+        "type": "0 - 5"
+      },
+      "image": "https://www.facebook.com/HMSRP/photos/bleach-marking-monk-seals-and-how-it-helps-to-save-themfrom-time-to-time-the-pub/656331801073507/",
+      "owner": "frank@foo.com"
+    },
+    {
+      "date": "11/22/2021",
+      "time": "11:35 AM",
+      "animalName": "Adult Hawaiian Monk Seal",
+      "name": "Smith Jones",
+      "phone": "808-429-3828",
+      "location": "Kaena Point Bird Sanctuary",
+      "latitude": 21.57540067,
+      "longitude": -158.2749109,
+      "description": "Sleeping. V76.",
+      "markers": {
+        "type": "Applied Bleach"
+      },
+      "numPeople": {
+        "type": "0 - 5"
+      },
+      "image": "https://kauaiseals.wordpress.com/2017/11/13/monk-seal-monday-4/",
+      "owner": "smith@foo.com"
+    },
+    {
+      "date": "11/16/2021",
+      "time": "1:35 PM",
+      "animalName": "Baby Hawaiian Monk Seal",
+      "name": "Sara Davis",
+      "phone": "808-843-2943",
+      "location": "Waimea Bay Beach",
+      "latitude": 21.64014357,
+      "longitude": -158.0635858,
+      "description": "Same mother with pup.",
+      "markers": {
+        "type": "Unknown"
+      },
+      "numPeople": {
+        "type": "10+"
+      },
+      "image": "https://phys.org/news/2017-06-endangered-hawaiian-monk-birth-remote.html",
+      "owner": "adminBaker@foo.com"
+    },
+    {
+      "date": "12/05/2021",
+      "time": "4:35 PM",
+      "animalName": "Hawaiian Monk seal with pup(s)",
+      "name": "Sara Davis",
+      "phone": "808-843-2943",
+      "location": "Kahala Beach",
+      "latitude": 21.26920588,
+      "longitude": -157.7769723,
+      "description": "Just born. On sand.",
+      "markers": {
+        "type": "Unknown"
+      },
+      "numPeople": {
+        "type": "5 - 10"
+      },
+      "image": "https://phys.org/news/2017-06-endangered-hawaiian-monk-birth-remote.html",
+      "owner": "adminBaker@foo.com"
+    },
+    {
+      "date": "12/07/2021",
+      "time": "7:30 AM",
+      "animalName": "Adult Hawaiian Monk Seal",
+      "name": "Frank Adams",
+      "phone": "808-938-2948",
+      "location": "Laniakea Beach",
+      "latitude": 21.61721526,
+      "longitude": -158.0873425,
+      "description": "Sleeping near lifeguard station.",
+      "markers": {
+        "type": "Unknown"
+      },
+      "numPeople": {
+        "type": "5 - 10"
+      },
+      "image": "https://www.marinemammalcenter.org/news/monk-seal-pups-had-less-than-one-percent-chance-of-survival-before-rescue",
+      "owner": "frank@foo.com"
+    },
+    {
+      "date": "12/05/2021",
+      "time": "2:20 PM",
+      "animalName": "Adult Hawaiian Monk Seal",
+      "name": "Johnathan Hills",
+      "phone": "808-583-392",
+      "location": "Haleiwa Alii Beach",
+      "latitude": 21.59457805,
+      "longitude": -158.1074641,
+      "description": "Sleeping by turtle.",
+      "markers": {
+        "type": "Unknown"
+      },
+      "numPeople": {
+        "type": "10+"
+      },
+      "image": "https://www.fisheries.noaa.gov/pacific-islands/marine-life-viewing-guidelines/viewing-marine-wildlife-hawaii",
+      "owner": "adminMason@foo.com"
+    }
+  ],
+  "defaultBird": [
+    {
+      "date": "12/01/2021",
+      "time": "8:45 AM",
+      "animalName": "Laysan Albatross",
+      "name": "Johnathan Hills",
+      "phone": "808-583-3928",
+      "location": "Kaena Point Bird Sanctuary",
+      "latitude": 21.57540067,
+      "longitude": -158.2749109,
+      "description": "Nesting. Red band.",
+      "markers": {
+        "type": "Bands"
+      },
+      "numPeople": {
+        "type": "10+"
+      },
+      "image": "https://www.fws.gov/refuge/Midway_Atoll/News/Where_Is_Wisdom.html",
+      "owner": "john@foo.com"
+    },
+    {
+      "date": "12/02/2021",
+      "time": "10:20 AM",
+      "animalName": "Wedge Tailed Shearwater",
+      "name": "Smith Jones",
+      "phone": "808-429-3828",
+      "location": "Kahala Beach",
+      "latitude": 21.26920588,
+      "longitude": -157.7769723,
+      "description": "Nesting by picnic table.",
+      "markers": {
+        "type": "Unknown"
+      },
+      "numPeople": {
+        "type": "0 - 5"
+      },
+      "image": "https://www.fws.gov/refuge/hawaiian_islands/wildlife_and_habitat/wedge-tailed_shearwater.html",
+      "owner": "smith@foo.com"
+    },
+    {
+      "date": "12/03/2021",
+      "time": "11:36 AM",
+      "animalName": "White Tern",
+      "name": "Frank Adams",
+      "phone": "808-938-2948",
+      "location": "Mokuleia Beach Park",
+      "latitude": 21.58141302,
+      "longitude": -158.1923707,
+      "description": "Perching in largest tree.",
+      "markers": {
+        "type": "Unknown"
+      },
+      "numPeople": {
+        "type": "0 - 5"
+      },
+      "image": "https://en.wikipedia.org/wiki/White_tern#/media/File:White_tern_with_fish.jpg",
+      "owner": "frank@foo.com"
+    },
+    {
+      "date": "12/04/2021",
+      "time": "12:52 PM",
+      "animalName": "Great frigatebird male",
+      "name": "Donald Petersen",
+      "phone": "808-493-4959",
+      "location": "Halona Beach Cove",
+      "latitude": 21.28171597,
+      "longitude": -157.6775395,
+      "description": "Flying overhead.",
+      "markers": {
+        "type": "Unknown"
+      },
+      "numPeople": {
+        "type": "0 - 5"
+      },
+      "image": "https://www.audubon.org/field-guide/bird/magnificent-frigatebird",
+      "owner": "adminBaker@foo.com"
+    },
+    {
+      "date": "12/09/2021",
+      "time": "2:43 PM",
+      "animalName": "Bonin Petrel",
+      "name": "Margaret Sommers",
+      "phone": "808-795-3594",
+      "location": "Hawaiian Electric Beach Park",
+      "latitude": 21.35722515,
+      "longitude": -158.1308238,
+      "description": "Sitting on beach.",
+      "markers": {
+        "type": "Unknown"
+      },
+      "numPeople": {
+        "type": "0 - 5"
+      },
+      "image": "https://www.flickr.com/photos/usfwspacific/40678304435",
+      "owner": "adminMason@foo.com"
+    }
+  ]
 }
