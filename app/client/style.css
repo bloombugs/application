@@ -52,6 +52,7 @@
   overflow-y: hidden;
   width:500px !important;
 }
-.deleteSegment {
-  po
+input.ui.deleteSubmit.button {
+  background-color: red;
+  color: white;
 }

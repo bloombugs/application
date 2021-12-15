@@ -7,20 +7,26 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Roles } from 'meteor/alanning:roles';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import { DistressReport } from '../../api/report/DistressReport';
 
 const bridge = new SimpleSchema2Bridge(DistressReport.schema);
 
 /** Renders the Page for editing a single document. */
 class DeleteDistressReport extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { redirectToReferer: false };
+  }
 
   // On successful submit, insert the data.
   submit(data) {
     const { _id } = data;
     DistressReport.collection.remove({ _id: _id }, (error) => (error ?
       swal('Error', error.message, 'error') :
-      swal('Success', 'Item deleted successfully', 'success')));
+      swal('Success', 'Item deleted successfully', 'success').then(() => {
+        this.setState({ redirectToReferer: true });
+      })));
   }
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
@@ -30,14 +36,31 @@ class DeleteDistressReport extends React.Component {
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   renderPage() {
+    const { from } = { from: { pathname: '/distressadminlist' } };
+    // if correct authentication, redirect to page instead of login screen
+    if (this.state.redirectToReferer) {
+      return <Redirect to={from}/>;
+    }
     return (
       <Grid container centered>
         <Grid.Column>
           <Header as="h2" textAlign="center">Delete Report</Header>
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)} model={this.props.doc}>
-            <Segment className="deleteSegment">
-              <SubmitField value='Delete'/>
-              <Button as={NavLink} exact to="/distressadminlist">Cancel</Button>
+            <Segment textAlign="center">
+              <div>
+                <h4>Date</h4>
+                {this.props.doc ? this.props.doc.date : ''}
+              </div>
+              <div>
+                <h4>Time</h4>
+                {this.props.doc ? this.props.doc.time : ''}
+              </div>
+              <div>
+                <h4>Name</h4>
+                {this.props.doc ? this.props.doc.name : ''}
+              </div>
+              <SubmitField className="deleteSubmit" value='Delete'/>
+              <Button color="grey" as={NavLink} exact to="/distressadminlist">Cancel</Button>
               <HiddenField name='owner'/>
             </Segment>
           </AutoForm>
