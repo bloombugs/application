@@ -72,7 +72,7 @@ export default withTracker(({ match }) => {
   // Determine if the subscription is ready
   const ready = subscription.ready();
   // Get the document
-  const doc = DistressReport.collection.findOne('documentId');
+  const doc = DistressReport.collection.findOne(documentId);
   return {
     doc,
     ready,
