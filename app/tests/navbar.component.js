@@ -19,8 +19,7 @@ class NavBar {
 
   /** Check that the specified user is currently logged in. */
   async isLoggedIn(testController, username) {
-    const loggedInUser = Selector('#navbar-current-user').innerText;
-    await testController.expect(loggedInUser).eql(username);
+    await testController.wait(10000).expect(Selector('#navbar-current-user').innerText).eql(username);
   }
 
   /** Check that someone is logged in, then click items to logout. */
@@ -35,6 +34,13 @@ class NavBar {
     await this.ensureLogout(testController);
     await testController.click('#login-dropdown');
     await testController.click('#login-dropdown-sign-up');
+  }
+
+  /** Pull down login menu, go to sign up page. */
+  async gotoAdminSignupPage(testController) {
+    await this.ensureLogout(testController);
+    await testController.click('#login-dropdown');
+    await testController.click('#login-dropdown-admin-sign-up');
   }
 
   /** Go to landing page via navbar */
@@ -55,6 +61,31 @@ class NavBar {
   /** Go to info page */
   async gotoInfoPage(testController) {
     await testController.click('#infoPage');
+  }
+
+  /** Go to bird list report admin page */
+  async gotoBirdListReportAdminPage(testController) {
+    await testController.click('#bird-admin-page');
+  }
+
+  /** Go to turtle list report admin page */
+  async gotoTurtleListReportAdminPage(testController) {
+    await testController.click('#turtle-admin-page');
+  }
+
+  /** Go to seal list report admin page */
+  async gotoSealListReportAdminPage(testController) {
+    await testController.click('#seal-admin-page');
+  }
+
+  /** Go to distress list report admin page */
+  async gotoDistressListReportAdminPage(testController) {
+    await testController.click('#distress-admin-page');
+  }
+
+  /** Go to user list report page */
+  async gotoUserListReportPage(testController) {
+    await testController.click('#user-list-report-page');
   }
 
 }

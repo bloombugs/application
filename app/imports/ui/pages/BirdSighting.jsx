@@ -11,42 +11,31 @@ import { Tracker } from 'meteor/tracker';
 import { BirdReport } from '../../api/report/BirdReport';
 import { Locations } from '../../api/Locations';
 
-const bfal = '/images/BlackFootAlbatross.jpg';
-
 // Create a schema to specify the structure of the data to appear in the form.
 
 const formSchema = new SimpleSchema({
-    date: String,
-    time: String,
-    animalName: {
-      type: String,
-      allowedValues: ['Unknown', 'Blackfoot Albatross BFAL', 'Laysan Albatross LAAL', 'Short Tailed Albatross/Albatross unknown type STAL',
-        'Brown Booby/Masked Booby BRBO', 'Red Footed Booby/Booby unknown type RFBO', 'Great Frigate GRFR', 'Blue Noddy BGNO',
-        'Black Noddy BLNO', 'Brown Noddy/Noddy unknown type BRNO', 'Bonin Petrel BOPE', "Bluwer's Petrel BUPE",
-        "Tristram's Storm Petrel/Petrel unknown type TRSP", 'Wedge tail Shearwater WTSH', 'Newell Shearwater NESH',
-        'Christmas Shearwater/Shearwater unknown type CHSH', 'Gray-Black Tern GRAT', 'Sooty Tern SOTE',
-        'White Tern/Tern unknown type WHTE', 'Red Tail Tropicbird RTTR', 'White Tail Tropicbird/Tropicbird unknown type WTTR'],
-      defaultValue: 'Unknown',
-    },
-    name: String,
-    phone: String,
-    location: String,
-    latitude: Number,
-    longitude: Number,
-    description: String,
-    markers: {
-      type: String,
-      allowedValues: ['Bands', 'Scar', 'Unknown'],
-      defaultValue: 'Unknown',
-    },
-    numPeople: {
-      type: String,
-      allowedValues: ['0 - 5', '5 - 10', '10+'],
-      defaultValue: '0 - 5',
-    },
-    image: String,
+  date: String,
+  time: String,
+  animalName: String,
+  name: String,
+  phone: String,
+  location: String,
+  latitude: Number,
+  longitude: Number,
+  description: String,
+  markers: {
+    type: String,
+    allowedValues: ['Bands', 'Scar', 'Unknown'],
+    defaultValue: 'Unknown',
   },
-  { tracker: Tracker });
+  numPeople: {
+    type: String,
+    allowedValues: ['0 - 5', '5 - 10', '10+'],
+    defaultValue: '0 - 5',
+  },
+  image: String,
+},
+{ tracker: Tracker });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
@@ -65,6 +54,7 @@ class BirdSighting extends React.Component {
     this.myMarkers = React.createRef();
     this.state = { showing: false, latitude: '',
       longitude: '', location: '', date: '' };
+    this.handleClick = this.handleClick.bind(this);
     this.handleLocation = this.handleLocation.bind(this);
     this.handleShow = this.handleShow.bind(this);
     this.preserveValues = this.preserveValues.bind(this);
@@ -103,10 +93,16 @@ class BirdSighting extends React.Component {
     this.preserveValues();
   }
 
+  handleClick(e) {
+    console.log(e.target);
+    this.setState({ animalName: e.target.alt });
+  }
+
   // On submit, insert the data.
   submit(data, formRef) {
     const { date, time, animalName, name, phone, location, latitude, longitude, description, markers, numPeople, image } = data;
-    const owner = name;
+    const username = Meteor.user().username;
+    const owner = username;
     BirdReport.collection.insert({ date, time, animalName, name, phone, location, latitude, longitude, description, markers, numPeople, image, owner },
       (error) => {
         if (error) {
@@ -128,14 +124,40 @@ class BirdSighting extends React.Component {
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} model={this.state}>
             <Segment>
               <Grid.Row>
-                <Image src={bfal} size="small" centered alt='albatross'/>
+                <div className="wrapper">
+                  <div className="my-image-container">
+                    <div className='bird-image'><Image onClick={this.handleClick} src='images/Laysan.jpg' width='200px' alt='Laysan Albatross'/></div>
+                    <div className="bird-image"><Image onClick={this.handleClick} src='images/BlackFootAlbatross.jpg' width='200px' alt='Black Footed Albatross'/></div>
+                    <div className="bird-image"><Image onClick={this.handleClick} src='images/ShortTail-3.jpg' width='200px' alt='Short Tailed Albatross'/></div>
+                    <div className="bird-image"><Image onClick={this.handleClick} src='images/RedFootedBooby.jpg' width='200px' alt='Red Footed Booby'/></div>
+                    <div className="bird-image"><Image onClick={this.handleClick} src='images/Brownbooby.jpg' width='200px' alt='Brown Booby'/></div>
+                    <div className="bird-image"><Image onClick={this.handleClick} src='images/Bulwers-2.jpg' width='200px' alt="Bulwer's Petrel"/></div>
+                    <div className="bird-image"><Image onClick={this.handleClick} src='images/BandRumpedStorm.jpg' width='200px' alt='Band Rumped Storm Petrel'/></div>
+                    <div className="bird-image"><Image onClick={this.handleClick} src='images/BoninPetrel.jpg' width='200px' alt='Bonin Petrel'/></div>
+                    <div className="bird-image"><Image onClick={this.handleClick} src='images/WedgeShearwater.jpg' width='200px' alt='Wedge Tailed Shearwater'/></div>
+                    <div className="bird-image"><Image onClick={this.handleClick} src='images/ChristmasShearwater.jpg' width='200px' alt='Christmas Shearwater'/></div>
+                    <div className="bird-image"><Image onClick={this.handleClick} src='images/NewellShearwater.jpg' width='200px' alt='Newell Shearwater'/></div>
+                    <div className="bird-image"><Image onClick={this.handleClick} src='images/BlueNoddy.jpg' width='200px' alt='Blue Noddy'/></div>
+                    <div className="bird-image"><Image onClick={this.handleClick} src='images/BrownNoddy-2.jpg' width='200px' alt='Brown Noddy'/></div>
+                    <div className="bird-image"><Image onClick={this.handleClick} src='images/BlackNoddy.jpg' width='200px' alt='Black Noddy'/></div>
+                    <div className="bird-image"><Image onClick={this.handleClick} src='images/WhiteTailed.jpg' width='200px' alt='White Tail Tropicbird'/></div>
+                    <div className="bird-image"><Image onClick={this.handleClick} src='images/RedTailed.jpg' width='200px' alt='Red Tail Tropicbird'/></div>
+                    <div className="bird-image"><Image onClick={this.handleClick} src='images/Great_frigatebird_male-2.jpg' width='200px' alt='Great frigatebird male'/></div>
+                    <div className="bird-image"><Image onClick={this.handleClick} src='images/Great_frigatebird_female.jpg' width='200px' alt='Great frigatebird female'/></div>
+                    <div className="bird-image"><Image onClick={this.handleClick} src='images/Whitetern.jpg' width='200px' alt='White Tern'/></div>
+                    <div className="bird-image"><Image onClick={this.handleClick} src='images/GreyBackedTern.jpg' width='200px' alt='Grey Backed Tern'/></div>
+                    <div className="bird-image"><Image onClick={this.handleClick} src='images/SootyTern.jpg' width='200px' alt='Sooty Tern'/></div>
+                    <div className="bird-image"><Image onClick={this.handleClick} src='images/unknown_bird.png' width='200px' alt='Unknown Seabird'/></div>
+                  </div>
+                </div>
               </Grid.Row>
             </Segment>
             <Segment>
 
               <TextField name='date' type='date' inputRef={this.myDate}/>
               <TextField name='time' type='time' inputRef={this.myTime}/>
-              <SelectField name='animalName' inputRef={this.myAnimalName}/>
+              <p>Click on picture above for bird name.</p>
+              <TextField name='animalName' inputRef={this.myAnimalName}/>
               <TextField name='name' inputRef={this.myName}/>
               <TextField name='phone' decimal={false} inputRef={this.myPhone}/>
               <TextField name='location' placeholder='Enter location or click a pin from the Get Location map'/>

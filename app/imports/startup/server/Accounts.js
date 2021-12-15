@@ -17,6 +17,15 @@ function createUser(email, password, role) {
   }
 }
 
+Meteor.methods({
+  'addAdminUser'({ email }) {
+    console.log(`  Creating user ${email}.`);
+    const adminUserEmail = Meteor.users.findOne({ 'emails.address': email });
+    Roles.createRole('admin', { unlessExists: true });
+    Roles.addUsersToRoles(adminUserEmail._id, 'admin');
+  },
+});
+
 // When running app for first time, pass a settings file to set up a default user account.
 if (Meteor.users.find().count() === 0) {
   if (Meteor.settings.defaultAccounts) {

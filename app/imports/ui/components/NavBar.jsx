@@ -25,17 +25,20 @@ class NavBar extends React.Component {
         <Menu.Item as={NavLink} id='infoPage' activeClassName="" exact to="/infodistress">
           <Header as="h4">Info</Header>
         </Menu.Item>
+        <Menu.Item as={NavLink} id='user-list-report-page' activeClassName="" exact to="/userreports">
+          <Header as="h4">User Reports List</Header>
+        </Menu.Item>
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-          <Menu.Item as={NavLink} activeClassName="active" exact to="/birdadminlist" key='birdadminlist'><Header as="h4">Bird Sightings</Header></Menu.Item>
+          <Menu.Item id='bird-admin-page' as={NavLink} activeClassName="active" exact to="/birdadminlist" key='birdadminlist'><Header as="h4">Bird Sightings</Header></Menu.Item>
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-          <Menu.Item as={NavLink} activeClassName="active" exact to="/sealadminlist" key='sealadminlist'><Header as="h4">Seal Sightings</Header></Menu.Item>
+          <Menu.Item id='seal-admin-page' as={NavLink} activeClassName="active" exact to="/sealadminlist" key='sealadminlist'><Header as="h4">Seal Sightings</Header></Menu.Item>
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-          <Menu.Item as={NavLink} activeClassName="active" exact to="/turtleadminlist" key='turtleadminlist'><Header as="h4">Turtle Sightings</Header></Menu.Item>
+          <Menu.Item id='turtle-admin-page' as={NavLink} activeClassName="active" exact to="/turtleadminlist" key='turtleadminlist'><Header as="h4">Turtle Sightings</Header></Menu.Item>
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-          <Menu.Item as={NavLink} activeClassName="active" exact to="/distressadminlist" key='distressadminlist'><Header as="h4">Distress Sightings</Header></Menu.Item>
+          <Menu.Item id='distress-admin-page' as={NavLink} activeClassName="active" exact to="/distressadminlist" key='distressadminlist'><Header as="h4">Distress Sightings</Header></Menu.Item>
         ) : ''}
         <Menu.Item position="right">
           {this.props.currentUser === '' ? (
@@ -43,6 +46,7 @@ class NavBar extends React.Component {
               <Dropdown.Menu>
                 <Dropdown.Item id="login-dropdown-sign-in" icon="user" text="Sign In" as={NavLink} exact to="/signin"/>
                 <Dropdown.Item id="login-dropdown-sign-up" icon="add user" text="Sign Up" as={NavLink} exact to="/signup"/>
+                <Dropdown.Item id="login-dropdown-admin-sign-up" icon="add user" text="Admin Sign Up" as={NavLink} exact to="/adminsignup"/>
               </Dropdown.Menu>
             </Dropdown>
           ) : (
@@ -53,7 +57,7 @@ class NavBar extends React.Component {
             </Dropdown>
           )}
         </Menu.Item>
-        <div className="ui hidden divider"></div>
+        <div className="ui hidden divider"/>
       </Menu>
     );
   }

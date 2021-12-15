@@ -11,10 +11,12 @@ import BirdListReportAdmin from '../pages/BirdListReportAdmin';
 import SealListReportAdmin from '../pages/SealListReportAdmin';
 import TurtleListReportAdmin from '../pages/TurtleListReportAdmin';
 import DistressListReportAdmin from '../pages/DistressListReportAdmin';
-import EditReport from '../pages/EditReport';
+import EditDistressReport from '../pages/EditDistressReport';
+import DeleteDistressReport from '../pages/DeleteDistressReport';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
+import SignupAsAdmin from '../pages/SignupAsAdmin';
 import Signout from '../pages/Signout';
 import Distress from '../pages/Distress';
 import DistressForm from '../pages/DistressForm';
@@ -29,6 +31,7 @@ import TurtleDistress from '../pages/TurtleDistress';
 import SealDistress from '../pages/SealDistress';
 import TaskForm from '../pages/TaskForm';
 import TestPage from '../pages/testPage';
+import UserListReport from '../pages/UserListReport';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -48,19 +51,23 @@ class App extends React.Component {
             <Route path="/birdsighting" component={BirdSighting}/>
             <Route path="/other" component={Other}/>
             <Route path="/signup" component={Signup}/>
+            <Route path="/adminsignup" component={SignupAsAdmin}/>
             <Route path="/signout" component={Signout}/>
             <Route path="/navbar" component={NavBar}/>
             <Route path="/infodistress" component={InfoDistress}/>
             <Route path="/birddistress" component={BirdDistress}/>
             <Route path="/turtledistress" component={TurtleDistress}/>
             <Route path="/sealdistress" component={SealDistress}/>
+            <Route path="/editreport" component={EditDistressReport}/>
             <Route path="/taskform" component={TaskForm}/>
             <Route path="/testpage" component={TestPage}/>
+            <ProtectedRoute path="/userreports" component={UserListReport}/>
             <AdminProtectedRoute path="/birdadminlist" component={BirdListReportAdmin}/>
             <AdminProtectedRoute path="/sealadminlist" component={SealListReportAdmin}/>
             <AdminProtectedRoute path="/turtleadminlist" component={TurtleListReportAdmin}/>
             <AdminProtectedRoute path="/distressadminlist" component={DistressListReportAdmin}/>
-            <ProtectedRoute path="/edit/:_id" component={EditReport}/>
+            <ProtectedRoute path="/edit/:_id" component={EditDistressReport}/>
+            <ProtectedRoute path="/delete/:_id" component={DeleteDistressReport}/>
             <Route component={NotFound}/>
           </Switch>
           <Footer/>

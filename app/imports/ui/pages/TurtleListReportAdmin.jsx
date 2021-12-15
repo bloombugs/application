@@ -17,7 +17,7 @@ class TurtleListReportAdmin extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     return (
-      <div className="ui fluid vertical menu">
+      <div id='turtle-list-admin-page' className="ui fluid vertical menu">
         <Header as="h2" textAlign="center">Sea Turtle Reports</Header>
         <TurtleTable reports={this.props.reports}/>
       </div>

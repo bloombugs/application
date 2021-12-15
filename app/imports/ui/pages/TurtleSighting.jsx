@@ -16,32 +16,28 @@ const tags = 'https://www.nationalband.com/wp-content/uploads/2017/05/sea-turtle
 
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
-    date: String,
-    time: String,
-    animalName: {
-      type: String,
-      allowedValues: ['Green turtle (Chelonia mydas) Cm', 'Hawksbill turtle (Eretmochelys imbricata) Ei', 'Unknown'],
-      defaultValue: 'Unknown',
-    },
-    name: String,
-    phone: String,
-    location: String,
-    latitude: Number,
-    longitude: Number,
-    description: String,
-    markers: {
-      type: String,
-      allowedValues: ['Applied Bleach', 'Tags', 'Satellite', 'Scar', 'Unknown'],
-      defaultValue: 'Unknown',
-    },
-    numPeople: {
-      type: String,
-      allowedValues: ['0 - 5', '5 - 10', '10+'],
-      defaultValue: '0 - 5',
-    },
-    image: String,
+  date: String,
+  time: String,
+  animalName: String,
+  name: String,
+  phone: String,
+  location: String,
+  latitude: Number,
+  longitude: Number,
+  description: String,
+  markers: {
+    type: String,
+    allowedValues: ['Applied Bleach', 'Tags', 'Satellite', 'Scar', 'Unknown'],
+    defaultValue: 'Unknown',
   },
-  { tracker: Tracker });
+  numPeople: {
+    type: String,
+    allowedValues: ['0 - 5', '5 - 10', '10+'],
+    defaultValue: '0 - 5',
+  },
+  image: String,
+},
+{ tracker: Tracker });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
@@ -60,6 +56,7 @@ class TurtleSighting extends React.Component {
     this.myImage = React.createRef();
     this.state = { showing: false, latitude: '',
       longitude: '', location: '', date: '' };
+    this.handleClick = this.handleClick.bind(this);
     this.handleLocation = this.handleLocation.bind(this);
     this.handleShow = this.handleShow.bind(this);
     this.preserveValues = this.preserveValues.bind(this);
@@ -77,6 +74,11 @@ class TurtleSighting extends React.Component {
     this.setState({ markers: this.myMarkers.current.value });
     this.setState({ image: this.myImage.current.value });
 
+  }
+
+  handleClick(e) {
+    console.log(e.target);
+    this.setState({ animalName: e.target.alt });
   }
 
   handleShow() {
@@ -101,7 +103,8 @@ class TurtleSighting extends React.Component {
   // On submit, insert the data.
   submit(data, formRef) {
     const { date, time, animalName, name, phone, location, latitude, longitude, description, markers, numPeople, image } = data;
-    const owner = name;
+    const username = Meteor.user().username;
+    const owner = username;
     TurtleReport.collection.insert({ date, time, animalName, name, phone, location, latitude, longitude, description, markers, numPeople, image, owner },
       (error) => {
         if (error) {
@@ -124,10 +127,20 @@ class TurtleSighting extends React.Component {
           <Header as="h2" textAlign="center" style={{ color: 'white' }}>Turtle Sighting Form</Header>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} model={this.state}>
             <Segment>
+              <Grid centered container>
+                <Grid.Row>
+                  <Image onClick={this.handleClick} src='images/Green_sea_turtle.jpg' width='300px' alt='Green Sea Turtle'/>
+                  <Image onClick={this.handleClick} src='images/Hawksbill_sea_turtle.jpg' width='300px' alt='Hawksbill Sea Turtle'/>
+                  <Image onClick={this.handleClick} src='images/unknown_turtle.jpg' width='300px' alt='Unknown Sea Turtle'/>
+                </Grid.Row>
+              </Grid>
+            </Segment>
+            <Segment>
               <Header textAlign='center'> Contact Info</Header>
               <TextField name='date' type='date' inputRef={this.myDate}/>
               <TextField name='time' type='time' inputRef={this.myTime}/>
-              <SelectField name='animalName' inputRef={this.myAnimalName}/>
+              <p>Click on picture above for turtle name.</p>
+              <TextField name='animalName' inputRef={this.myAnimalName}/>
               <TextField name='name' inputRef={this.myName}/>
               <TextField name='phone' decimal={false} inputRef={this.myPhone}/>
               <TextField name='location'placeholder='Enter location or click a pin from the Get Location map'/>

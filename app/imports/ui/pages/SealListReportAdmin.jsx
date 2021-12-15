@@ -17,7 +17,7 @@ class SealListReportAdmin extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     return (
-      <div className="ui fluid vertical menu">
+      <div id='seal-list-admin-page' className="ui fluid vertical menu">
         <Header as="h2" textAlign="center">Hawaiian Monk Seal Reports</Header>
         <SealTable reports={this.props.reports}/>
       </div>

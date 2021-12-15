@@ -28,3 +28,31 @@
 .bottom-landing {
   padding: 40px;
 }
+.bird-image {
+  height: 200px;
+  width: 200px;
+  font-size: 25px;
+  margin: 10px;
+  display: inline-block;
+  line-height: 100px;
+}
+.turtle-image {
+  height: 169px;
+  width: 300px;
+  font-size: 25px;
+  margin: 10px;
+  display: inline-block;
+  line-height: 100px;
+}
+.my-image-container {
+  vertical-align: middle;
+  display: inline-block;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width:500px !important;
+}
+input.ui.deleteSubmit.button {
+  background-color: red;
+  color: white;
+}

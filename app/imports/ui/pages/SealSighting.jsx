@@ -18,32 +18,32 @@ const NB = '/images/NBventral.png';
 
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
-    date: String,
-    time: String,
-    animalName: {
-      type: String,
-      allowedValues: ['Adult Hawaiian Monk Seal', 'Baby Hawaiian Monk Seal', 'Hawaiian Monk seal with pup(s)', 'Unknown'],
-      defaultValue: 'Unknown',
-    },
-    name: String,
-    phone: String,
-    location: String,
-    latitude: Number,
-    longitude: Number,
-    markers: {
-      type: String,
-      allowedValues: ['Applied Bleach', 'Tags', 'Ventral CC Scar', 'NB Ventral RHF', 'Scar', 'Unknown'],
-      defaultValue: 'Unknown',
-    },
-    description: String,
-    numPeople: {
-      type: String,
-      allowedValues: ['0 - 5', '5 - 10', '10+'],
-      defaultValue: '0 - 5',
-    },
-    image: String,
+  date: String,
+  time: String,
+  animalName: {
+    type: String,
+    allowedValues: ['Adult Hawaiian Monk Seal', 'Baby Hawaiian Monk Seal', 'Hawaiian Monk seal with pup(s)', 'Unknown'],
+    defaultValue: 'Unknown',
   },
-  { tracker: Tracker });
+  name: String,
+  phone: String,
+  location: String,
+  latitude: Number,
+  longitude: Number,
+  markers: {
+    type: String,
+    allowedValues: ['Applied Bleach', 'Tags', 'Ventral CC Scar', 'NB Ventral RHF', 'Scar', 'Unknown'],
+    defaultValue: 'Unknown',
+  },
+  description: String,
+  numPeople: {
+    type: String,
+    allowedValues: ['0 - 5', '5 - 10', '10+'],
+    defaultValue: '0 - 5',
+  },
+  image: String,
+},
+{ tracker: Tracker });
 const bridge = new SimpleSchema2Bridge(formSchema);
 
 class SealSighting extends React.Component {
@@ -101,7 +101,8 @@ class SealSighting extends React.Component {
   // On submit, insert the data.
   submit(data, formRef) {
     const { date, time, animalName, name, phone, location, latitude, longitude, description, markers, numPeople, image } = data;
-    const owner = name;
+    const username = Meteor.user().username;
+    const owner = username;
     SealReport.collection.insert({ date, time, animalName, name, phone, location, latitude, longitude, description, markers, numPeople, image, owner },
       (error) => {
         if (error) {
