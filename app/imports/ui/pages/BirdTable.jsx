@@ -18,8 +18,8 @@ const columns = [
   { name: 'Markers', selector: row => row.markers, sortable: true },
   { name: 'Number of People', selector: row => row.numPeople, sortable: true },
   { name: 'Image', selector: row => row.image },
-  { name: 'Edit', selector: row => <Link to={`/edit/${row._id}`}>Edit</Link> },
-  { name: 'Delete', selector: row => <Link to={`/delete/${row._id}`}>Delete</Link> },
+  { name: 'Edit', selector: row => <Link to={`/editbird/${row._id}`}>Edit</Link> },
+  { name: 'Delete', selector: row => <Link to={`/deletebird/${row._id}`}>Delete</Link> },
 ];
 
 export const BirdTable = (props) => {
