@@ -1,25 +1,26 @@
 import React from 'react';
-import { Grid, Loader, Header, Segment } from 'semantic-ui-react';
+import { Grid, Loader, Header, Segment, Button } from 'semantic-ui-react';
 import swal from 'sweetalert';
-import { AutoForm, HiddenField, SelectField, SubmitField, TextField } from 'uniforms-semantic';
+import { AutoForm, HiddenField, SubmitField } from 'uniforms-semantic';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Roles } from 'meteor/alanning:roles';
 import { DistressReport } from '../../api/report/DistressReport';
+import { NavLink } from 'react-router-dom';
 
 const bridge = new SimpleSchema2Bridge(DistressReport.schema);
 
 /** Renders the Page for editing a single document. */
-class EditDistressReport extends React.Component {
+class DeleteDistressReport extends React.Component {
 
   // On successful submit, insert the data.
   submit(data) {
-    const { date, time, animal, name, phone, location, latitude, longitude, description, image, Submit, _id } = data;
-    DistressReport.collection.update(_id, { $set: { date, time, animal, name, phone, location, latitude, longitude, description, image, Submit } }, (error) => (error ?
+    const { _id } = data;
+    DistressReport.collection.remove({ _id: _id }, (error) => (error ?
       swal('Error', error.message, 'error') :
-      swal('Success', 'Item updated successfully', 'success')));
+      swal('Success', 'Item deleted successfully', 'success')));
   }
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
@@ -32,20 +33,11 @@ class EditDistressReport extends React.Component {
     return (
       <Grid container centered>
         <Grid.Column>
-          <Header as="h2" textAlign="center">Edit Report</Header>
+          <Header as="h2" textAlign="center">Delete Report</Header>
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)} model={this.props.doc}>
             <Segment>
-              <TextField name='date' type='date'/>
-              <TextField name='time' type='time'/>
-              <TextField name='name'/>
-              <TextField name='phone' decimal={false}/>
-              <SelectField name='animal'/>
-              <TextField name='location'/>
-              <TextField name='latitude'/>
-              <TextField name='longitude'/>
-              <TextField name='description'/>
-              <TextField name='image'/>
-              <SubmitField value='Submit'/>
+              <SubmitField value='Delete'/>
+              <Button as={NavLink} className="infoButton" exact to="/distressadminlist">Cancel</Button>
               <HiddenField name='owner'/>
             </Segment>
           </AutoForm>
@@ -56,7 +48,7 @@ class EditDistressReport extends React.Component {
 }
 
 // Require the presence of a Report in the props object. Uniforms adds 'model' to the props, which we use.
-EditDistressReport.propTypes = {
+DeleteDistressReport.propTypes = {
   doc: PropTypes.object,
   model: PropTypes.object,
   ready: PropTypes.bool.isRequired,
@@ -72,9 +64,9 @@ export default withTracker(({ match }) => {
   // Determine if the subscription is ready
   const ready = subscription.ready();
   // Get the document
-  const doc = DistressReport.collection.findOne('documentId');
+  const doc = DistressReport.collection.findOne(documentId);
   return {
     doc,
     ready,
   };
-})(EditDistressReport);
+})(DeleteDistressReport);

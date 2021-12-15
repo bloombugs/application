@@ -17,6 +17,7 @@ const columns = [
   { name: 'Description', selector: row => row.description, sortable: true },
   { name: 'Image', selector: row => row.image, sortable: true },
   { name: 'Edit', selector: row => <Link to={`/edit/${row._id}`}>Edit</Link> },
+  { name: 'Delete', selector: row => <Link to={`/delete/${row._id}`}>Delete</Link> },
 ];
 
 export const DistressTable = (props) => {

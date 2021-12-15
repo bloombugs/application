@@ -14,6 +14,13 @@ function addData(data) {
   console.log(`  Adding: ${data.name} (${data.owner})`);
   Report.collection.insert(data);
 }
+/*
+function insertDistress({ date, time, name, phone, animal, location, latitude,
+  longitude, description, image, owner }) {
+  DistressReport.collection.insert({ data: date, time, name, phone, animal, location, latitude,
+    longitude, description, image, owner });
+}
+*/
 
 // Initialize the ReportsCollection if empty.
 if (Report.collection.find().count() === 0) {
@@ -37,6 +44,7 @@ if (SealReport.collection.find().count() === 0) {
 if (DistressReport.collection.find().count() === 0) {
   if (Meteor.settings.defaultData) {
     console.log('Creating default data.');
+    // Meteor.settings.defaultDistress.map(data => insertDistress(data));
     Meteor.settings.defaultData.map(data => addData(data));
   }
 }
