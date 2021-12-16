@@ -26,12 +26,14 @@ class Distress extends React.Component {
                 </Button.Content>
               </a>
             </Button>
+            <hr/>
             <Button size='big' color='green' icon labelPosition='right'>
               <Icon name='file text'/>
               <Link to="/distressform" id='distressFormPage' style={{ color: 'white' }}>
                 Click for Online Form
               </Link>
             </Button>
+            <hr/>
             <Button size='medium' color='grey'>
               <Link to="/infodistress" style={{ color: 'white' }}>
                 How to tell if an animal is in distress
