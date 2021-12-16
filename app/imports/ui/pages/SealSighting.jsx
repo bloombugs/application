@@ -121,7 +121,8 @@ class SealSighting extends React.Component {
       <Grid id='sealReportPage' centered style={{ background: '#87acb5' }}>
         <Container><Grid.Column>
           <div className="ui hidden divider"></div>
-          <Header as="h2" textAlign="center" style={{ color: 'white' }}>Seal Sighting Form</Header>
+          <div className="ui hidden divider"></div>
+          <Header as="h2" textAlign="center" style={{ color: 'white' }}>Hawaiian Monk Seal Sighting Form</Header>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} model={this.state}>
             <Segment>
               <TextField name='date' type='date' inputRef={this.myDate}/>
@@ -138,10 +139,13 @@ class SealSighting extends React.Component {
               <div className="ui hidden divider"></div>
 
               <h2>Please provide the following: </h2>
-              <p> - Location Description (ex. landmarks or building near by)</p>
-              <p> - Animal Behavior (ex. sleeping, moving, barking)</p>
-              <p> - If there is more than one animal</p>
-              <p> - Interaction between the animal and people/other animals</p>
+              <ul>
+                <li>Location Description (i.e. landmarks or building near by)</li>
+                <li>Animal Behavior (i.e. sleeping, moving, eating, nesting)</li>
+                <li>If there is more than one animal</li>
+                <li>Interaction between the animal and people/other animals</li>
+              </ul>
+               
               <LongTextField name='description' inputRef={this.myDescription} placeholder='Example: A seal is sleeping on the beach by Hilton Hawaiin Village'/>
 
               <Header as="h5" textAlign="center">Applied Bleach</Header>
