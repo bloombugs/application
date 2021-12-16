@@ -14,8 +14,11 @@ class Footer extends React.Component {
       <footer>
       <div style={{  padding: '5px' }} className="ui center aligned container">
             <Image src={hmar} width='60px' className="logo" alt='HMAR logo' centered/>
-              <a href="https://h-mar.org/">Hawai&apos;i Marine Animal Response</a><br />
-              <a href="tel:[888-256-9840]">(888) 256-9840</a>
+              Hawai&apos;i Marine Animal Response<br />
+              <a href="https://h-mar.org/">Website</a> | 
+              <a href="mailto:info@h-mar.org">E-mail</a><br />
+              <a href="tel:[888-256-9840]">Marine Protected Species Hotline: (888) 256-9840</a><br />
+              <a href="tel:[888-476-4627]">All Other Calls: (888) 476-HMAR</a>
         </div>
       </footer>
     );
