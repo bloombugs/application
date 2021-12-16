@@ -17,8 +17,8 @@ class Footer extends React.Component {
               Hawai&apos;i Marine Animal Response<br />
               <a href="https://h-mar.org/">Website</a> | 
               <a href="mailto:info@h-mar.org">E-mail</a><br />
-              <a href="tel:[888-256-9840]">Marine Protected Species Hotline: (888) 256-9840</a><br />
-              <a href="tel:[888-476-4627]">All Other Calls: (888) 476-HMAR</a>
+              Marine Protected Species Hotline: <a href="tel:[888-256-9840]">(888) 256-9840</a><br />
+              All Other Calls: <a href="tel:[888-476-4627]">(888) 476-HMAR</a>
         </div>
       </footer>
     );
