@@ -4,7 +4,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 const hwc = '/images/HWC-Logo.jpg';
 const dlnr = '/images/DLNR.png';
-const hpc = '/images/hpc-logo.png';
+const hpd = '/images/hpd-logo.png';
 class Other extends React.Component {
   render() {
     return (
@@ -18,7 +18,7 @@ class Other extends React.Component {
             <Header as="h3" >Hawaii Wildlife Center:<br/>Bird and Bat Help Line<br/>(808) 884-5000</Header>
             <Image src={dlnr} size="tiny" centered alt='State of Hawaii Department of Land and Natural Resources logo'/>
             <Header as="h3"> State of Hawaii:<br/>Department of Land and Natural Resources<br/>Marine Animal Response Hotline<br/>(888) 256-9840</Header>
-            <Image src={hpc} size="tiny" centered alt='Honolulu Police Department logo'/>
+            <Image src={hpd} size="tiny" centered alt='Honolulu Police Department logo'/>
             <Header as="h3"> Honolulu Police Department:<br/>Non-Emergency Line<br/>(808) 529-3111</Header>
             <div className="ui hidden divider"></div>
           </Grid.Column>
