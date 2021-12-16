@@ -156,7 +156,7 @@ class BirdSighting extends React.Component {
 
               <TextField name='date' type='date' inputRef={this.myDate}/>
               <TextField name='time' type='time' inputRef={this.myTime}/>
-              <p>Click on picture above for bird name.</p>
+              <p>Click on picture above for bird name. For unknown bird, click the last image.</p>
               <TextField name='animalName' inputRef={this.myAnimalName}/>
               <TextField name='name' inputRef={this.myName}/>
               <TextField name='phone' decimal={false} inputRef={this.myPhone}/>
