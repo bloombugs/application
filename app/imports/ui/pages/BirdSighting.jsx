@@ -120,7 +120,9 @@ class BirdSighting extends React.Component {
     return (
       <Grid id='birdReportPage' centered style={{ background: '#87acb5' }}>
         <Container><Grid.Column>
-          <Header as="h2" textAlign="center">Bird Sighting Form</Header>
+          <div className="ui hidden divider"></div>
+          <div className="ui hidden divider"></div>
+          <Header as="h2" textAlign="center" style={{ color: 'white' }}>Seabird Sighting Form</Header>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} model={this.state}>
             <Segment>
               <Grid.Row>
@@ -153,7 +155,7 @@ class BirdSighting extends React.Component {
               </Grid.Row>
             </Segment>
             <Segment>
-
+              <Header textAlign='center'> Contact Info</Header>
               <TextField name='date' type='date' inputRef={this.myDate}/>
               <TextField name='time' type='time' inputRef={this.myTime}/>
               <p>Click on picture above for bird name. For unknown bird, click the last image.</p>
@@ -167,10 +169,12 @@ class BirdSighting extends React.Component {
               </Segment>}
 
               <h2>Please provide the following: </h2>
-              <p> - Location Description (ex. landmarks or building near by)</p>
-              <p> - Animal Behavior (ex. sleeping, moving, eating, nesting )</p>
-              <p> - If there is more than one animal</p>
-              <p> - Interaction between the animal and people/other animals</p>
+              <ul>
+                <li>Location Description (i.e. landmarks or building near by)</li>
+                <li>Animal Behavior (i.e. sleeping, moving, eating, nesting)</li>
+                <li>If there is more than one animal</li>
+                <li>Interaction between the animal and people/other animals</li>
+              </ul>
               <LongTextField name='description' inputRef={this.myDescription} placeholder='Example: Two baby birds fell from their nest by the campsite at Sherwoods campsite '/>
 
               <SelectField name='markers' inputRef={this.myMarkers}/>
