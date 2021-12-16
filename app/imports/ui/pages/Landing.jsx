@@ -19,7 +19,7 @@ class Landing extends React.Component {
                     <List.Item>Distress Report: Prompts you to report an animal in distress to HMAR</List.Item>
                     <List.Item>Sighting Report: Prompts you to report an animal that you have sighted</List.Item>
                     <List.Item>Info: Provides information on what an animal in distress looks like</List.Item>
-                    <List.Item>Kahukai and HMAR only respond to reports of Hawaiian Seal Monks, Sea Turtles, and Seabirds
+                    <List.Item>Kahukai and HMAR only respond to reports of Hawaiian Seal Monks, Sea Turtles, and Seabirds</List.Item>
                   </List>
                   <p>Clicking on the Kahukai Logo takes you back to this landing page.</p>
                   <Button as={NavLink} className="distressButton" exact to="/distress" color='red' size='big'>Animal in Distress</Button>
