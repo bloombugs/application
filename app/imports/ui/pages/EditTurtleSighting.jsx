@@ -74,7 +74,7 @@ export default withTracker(({ match }) => {
   // Determine if the subscription is ready
   const ready = subscription.ready();
   // Get the document
-  const doc = TurtleReport.collection.findOne(documentId);
+  const doc = TurtleReport.collection.findOne('documentId');
   return {
     doc,
     ready,
