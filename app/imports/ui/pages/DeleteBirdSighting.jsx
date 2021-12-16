@@ -25,7 +25,9 @@ class DeleteBirdSighting extends React.Component {
     const { _id } = data;
     BirdReport.collection.remove({ _id: _id }, (error) => (error ?
       swal('Error', error.message, 'error') :
-      swal('Success', 'Item deleted successfully', 'success')));
+      swal('Success', 'Item deleted successfully', 'success').then(() => {
+        this.setState({ redirectToReferer: true });
+      })));
   }
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
