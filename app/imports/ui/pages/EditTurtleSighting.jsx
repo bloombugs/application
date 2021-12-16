@@ -58,7 +58,7 @@ class EditTurtleSighting extends React.Component {
 }
 
 // Require the presence of a Report in the props object. Uniforms adds 'model' to the props, which we use.
-EditTurtleReport.propTypes = {
+EditTurtleSighting.propTypes = {
   doc: PropTypes.object,
   model: PropTypes.object,
   ready: PropTypes.bool.isRequired,
@@ -79,4 +79,4 @@ export default withTracker(({ match }) => {
     doc,
     ready,
   };
-})(EditTurtleReport);
+})(EditTurtleSighting);
