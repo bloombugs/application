@@ -44,7 +44,7 @@ class DeleteDistressReport extends React.Component {
     return (
       <Grid container centered>
         <Grid.Column>
-          <Header as="h2" textAlign="center">Delete Report</Header>
+          <Header as="h2" textAlign="center">Delete Distress Report</Header>
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)} model={this.props.doc}>
             <Segment textAlign="center">
               <div>
