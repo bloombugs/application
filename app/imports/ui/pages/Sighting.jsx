@@ -14,18 +14,18 @@ export default class Sighting extends React.Component {
         <Grid.Row verticalAlign='middle' style={{ background: '#87acb5' }}>
           <Grid.Column width={14}>
             <div className="ui hidden divider"></div>
-            <Header as="h3" style={{ color: 'white' }}>Marine Animal Report</Header>
+            <Header as="h3" style={{ color: 'white' }}>Marine Animal Sighting Report</Header>
             <p style={{ color: 'white' }}>What type of animal are you reporting?</p>
             <Button id='sealPage' secondary inverted style={{ background: 'white' }}><Link to="/sealsighting"><Image src={seal} size="medium"/>
               Hawaiian Monk Seal</Link></Button>
             <div className="ui hidden divider"></div>
             <Button id='turtlePage' secondary inverted style={{ background: 'white' }}><Link to="/turtlesighting"><Image src={turtle} size="medium"/>
-              Turtle</Link></Button>
+              Sea Turtle</Link></Button>
           </Grid.Column>
           <Grid.Row>
             <div className="ui hidden divider"></div>
             <Button id='birdPage' secondary inverted style={{ background: 'white' }}><Link to="/birdsighting"><Image src={bird} size="medium"/>
-              Bird</Link></Button>
+              Seabird</Link></Button>
             <div className="ui hidden divider"></div>
             <Button id='otherPage' secondary inverted style={{ background: 'white' }}><Link to="/other"><Image src={whale} size="medium"/>
               Other</Link></Button>

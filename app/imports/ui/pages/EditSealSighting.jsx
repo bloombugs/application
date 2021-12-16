@@ -47,7 +47,7 @@ class EditSealSighting extends React.Component {
     return (
       <Grid container centered>
         <Grid.Column>
-          <Header as="h2" textAlign="center">Edit Seal Sighting</Header>
+          <Header as="h2" textAlign="center">Edit Hawaiian Monk Seal Sighting</Header>
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)} model={this.props.doc}>
             <Segment>
               <TextField name='date' type='date'/>

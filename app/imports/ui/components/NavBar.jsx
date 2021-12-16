@@ -19,14 +19,14 @@ class NavBar extends React.Component {
         <Menu.Item as={NavLink} id='distressPage' activeClassName="" exact to="/distress">
           <Header as="h4">Distress Report</Header>
         </Menu.Item>
+        <Menu.Item as={NavLink} id='infoPage' activeClassName="" exact to="/infodistress">
+          <Header as="h4">Distress Info</Header>
+        </Menu.Item>
         <Menu.Item as={NavLink} id='sightingReportPage' activeClassName="" exact to="/sighting">
           <Header as="h4">Sighting Report</Header>
         </Menu.Item>
-        <Menu.Item as={NavLink} id='infoPage' activeClassName="" exact to="/infodistress">
-          <Header as="h4">Info</Header>
-        </Menu.Item>
         <Menu.Item as={NavLink} id='user-list-report-page' activeClassName="" exact to="/userreports">
-          <Header as="h4">User Reports List</Header>
+          <Header as="h4">User Reports</Header>
         </Menu.Item>
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
           <Menu.Item id='bird-admin-page' as={NavLink} activeClassName="active" exact to="/birdadminlist" key='birdadminlist'><Header as="h4">Bird Sightings</Header></Menu.Item>

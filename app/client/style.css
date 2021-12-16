@@ -56,3 +56,28 @@ input.ui.deleteSubmit.button {
   background-color: red;
   color: white;
 }
+
+ul {
+    text-align: center;
+    list-style-position: inside;
+}
+
+.white-link {
+  color: white;
+}
+
+.black-link {
+  color: black;
+}
+
+hr {
+    clear: both;
+    visibility: hidden;
+}
+
+#footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    background:#ffffff;
+}

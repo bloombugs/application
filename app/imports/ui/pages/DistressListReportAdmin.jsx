@@ -18,7 +18,7 @@ class DistressListReportAdmin extends React.Component {
   renderPage() {
     return (
       <div id='distress-list-admin-page' className="ui fluid vertical menu">
-        <Header as="h2" textAlign="center">Distress Animals</Header>
+        <Header as="h2" textAlign="center">Distress Reports</Header>
         <DistressTable reports={this.props.reports}/>
       </div>
     );

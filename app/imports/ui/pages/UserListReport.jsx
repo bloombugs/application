@@ -26,7 +26,7 @@ class UserListReport extends React.Component {
       <div id='user-list-report-page' className="ui fluid vertical menu">
         <Header as="h2" textAlign="center">User Distress Reports</Header>
         <DistressTable reports={this.props.reports2}/>
-        <Header as="h2" textAlign="center">User Bird Reports</Header>
+        <Header as="h2" textAlign="center">User Seabird Reports</Header>
         <BirdTable reports={this.props.reports} />
         <Header as="h2" textAlign="center">User Hawaiian Monk Seal Reports</Header>
         <SealTable reports={this.props.reports3}/>
