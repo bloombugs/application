@@ -34,7 +34,7 @@ class Distress extends React.Component {
                 Click for Online Form
               </Link>
             </Button>
-            <hr/>
+            <hr/><hr/><hr/>
             <Button size='medium' color='grey'>
               <Link to="/infodistress" style={{ color: 'white' }}>
                 How to tell if an animal is in distress
