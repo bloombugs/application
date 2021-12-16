@@ -7,14 +7,14 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Roles } from 'meteor/alanning:roles';
-import { BirdReport } from '../../api/report/BirdReport';
 import { NavLink, Redirect } from 'react-router-dom';
+import { BirdReport } from '../../api/report/BirdReport';
 
 const bridge = new SimpleSchema2Bridge(BirdReport.schema);
 
 /** Renders the Page for editing a single document. */
 class EditBirdSighting extends React.Component {
-  
+
   constructor(props) {
     super(props);
     this.state = { redirectToReferer: false };
@@ -37,13 +37,13 @@ class EditBirdSighting extends React.Component {
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   renderPage() {
-    
+
     const { from } = { from: { pathname: '/birdadminlist' } };
     // if correct authentication, redirect to page instead of login screen
     if (this.state.redirectToReferer) {
       return <Redirect to={from}/>;
     }
-    
+
     return (
       <Grid container centered>
         <Grid.Column>

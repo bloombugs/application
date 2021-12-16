@@ -6,7 +6,7 @@ import { TurtleReport } from '../../api/report/TurtleReport';
 
 /** Renders a single row in the List Report (Admin) table. See pages/ListReportAdmin.jsx. */
 class TurtleReportItemAdmin extends React.Component {
-  
+
   constructor(props) {
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
@@ -16,7 +16,7 @@ class TurtleReportItemAdmin extends React.Component {
     console.log(e.target);
     DistressReport.collection.remove({ _id: this.props.report._id });
   }
-  
+
   render() {
     return (
       <Table.Row>
