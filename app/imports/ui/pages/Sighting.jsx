@@ -14,7 +14,7 @@ export default class Sighting extends React.Component {
         <Grid.Row verticalAlign='middle' style={{ background: '#87acb5' }}>
           <Grid.Column width={14}>
             <div className="ui hidden divider"></div>
-            <Header as="h3" style={{ color: 'white' }}>Marine Animal Report</Header>
+            <Header as="h3" style={{ color: 'white' }}>Marine Animal Sighting Report</Header>
             <p style={{ color: 'white' }}>What type of animal are you reporting?</p>
             <Button id='sealPage' secondary inverted style={{ background: 'white' }}><Link to="/sealsighting"><Image src={seal} size="medium"/>
               Hawaiian Monk Seal</Link></Button>
