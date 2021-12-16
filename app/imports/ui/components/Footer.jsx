@@ -5,22 +5,20 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
 import { Menu, Image, Header } from 'semantic-ui-react';
 
-/** The NavBar appears at the top of every page. Rendered by the App Layout component. */
+const hmar = '/images/hmar-logo.png';
+
+/** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
 class Footer extends React.Component {
   render() {
     return (
-      <Menu attached="bottom" borderless className="ui stackable menu" style={{ background: 'white', padding: '5px' }} >
-        <Menu.Item as={NavLink} activeClassName="" exact to="/">
-          <Image src='https://www.mauibath.com/wp-content/uploads/2019/10/596998840197290025-300x300.png' width='60px' className="logo"/>
-        </Menu.Item>
-        <Menu.Item as={NavLink} activeClassName="" exact to="/distress">
-          <Header as="h4">Distress Report</Header>
-        </Menu.Item>
-        <Menu.Item as={NavLink} activeClassName="" exact to="/sighting">
-          <Header as="h4">Sighting Report</Header>
-        </Menu.Item>
-        <div className="ui hidden divider"></div>
-      </Menu>
+      <footer>
+      <div style={{ background: 'white', padding: '5px' }} className="ui center aligned container">
+            <Image src={hmar} width='60px' className="logo" alt='HMAR logo'/>
+              Hawai&apos;i Marine Animal Response<br />
+              <a href="https://h-mar.org/">Website</a><br />
+              <a className="white-link" href="tel:[888-256-9840]">(888) 256-9840</a>
+        </div>
+      </footer>
     );
   }
 }
