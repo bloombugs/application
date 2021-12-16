@@ -18,7 +18,7 @@ class Distress extends React.Component {
               so they can attend to the animal as soon as possible at <a className="white-link" href="tel:[888-256-9840]">(888) 256-9840</a></Header>
             <hr/>
             <Button animated size='big' color='red' icon labelPosition='left'>
-              <Icon name='phone volume'/>
+            <Icon name='phone volume'/>
               <Button.Content visible>Click for Phone Call</Button.Content>
               <a href="tel:[888-256-9840]">
                 <Button.Content hidden>
