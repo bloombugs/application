@@ -6,7 +6,7 @@ import { BirdReport } from '../../api/report/BirdReport';
 
 /** Renders a single row in the List Report (Admin) table. See pages/ListReportAdmin.jsx. */
 class BirdReportItemAdmin extends React.Component {
-  
+
   constructor(props) {
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
@@ -14,9 +14,9 @@ class BirdReportItemAdmin extends React.Component {
 
   handleDelete(e) {
     console.log(e.target);
-    DistressReport.collection.remove({ _id: this.props.report._id });
+    BirdReport.collection.remove({ _id: this.props.report._id });
   }
-  
+
   render() {
     return (
       <Table.Row>

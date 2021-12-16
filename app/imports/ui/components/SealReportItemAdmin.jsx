@@ -6,7 +6,7 @@ import { SealReport } from '../../api/report/SealReport';
 
 /** Renders a single row in the List Report (Admin) table. See pages/ListReportAdmin.jsx. */
 class SealReportItemAdmin extends React.Component {
-  
+
   constructor(props) {
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
@@ -14,9 +14,9 @@ class SealReportItemAdmin extends React.Component {
 
   handleDelete(e) {
     console.log(e.target);
-    DistressReport.collection.remove({ _id: this.props.report._id });
+    SealReport.collection.remove({ _id: this.props.report._id });
   }
-  
+
   render() {
     return (
       <Table.Row>

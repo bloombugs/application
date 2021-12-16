@@ -7,19 +7,19 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Roles } from 'meteor/alanning:roles';
-import { TurtleReport } from '../../api/report/TurtleReport';
 import { NavLink, Redirect } from 'react-router-dom';
+import { TurtleReport } from '../../api/report/TurtleReport';
 
 const bridge = new SimpleSchema2Bridge(TurtleReport.schema);
 
 /** Renders the Page for editing a single document. */
 class DeleteTurtleSighting extends React.Component {
-  
+
   constructor(props) {
     super(props);
     this.state = { redirectToReferer: false };
   }
-  
+
   // On successful submit, insert the data.
   submit(data) {
     const { _id } = data;
@@ -37,13 +37,13 @@ class DeleteTurtleSighting extends React.Component {
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   renderPage() {
-    
+
     const { from } = { from: { pathname: '/turtleadminlist' } };
     // if correct authentication, redirect to page instead of login screen
     if (this.state.redirectToReferer) {
       return <Redirect to={from}/>;
     }
-    
+
     return (
       <Grid container centered>
         <Grid.Column>

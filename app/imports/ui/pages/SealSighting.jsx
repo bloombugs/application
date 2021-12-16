@@ -145,7 +145,7 @@ class SealSighting extends React.Component {
                 <li>If there is more than one animal</li>
                 <li>Interaction between the animal and people/other animals</li>
               </ul>
-               
+
               <LongTextField name='description' inputRef={this.myDescription} placeholder='Example: A seal is sleeping on the beach by Hilton Hawaiin Village'/>
 
               <Header as="h5" textAlign="center">Applied Bleach</Header>

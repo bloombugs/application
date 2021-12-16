@@ -13,11 +13,11 @@ import TurtleListReportAdmin from '../pages/TurtleListReportAdmin';
 import DistressListReportAdmin from '../pages/DistressListReportAdmin';
 import EditDistressReport from '../pages/EditDistressReport';
 import EditBirdSighting from '../pages/EditBirdSighting';
-import EditSealSighting from '../pages/EditSealSighting'; 
+import EditSealSighting from '../pages/EditSealSighting';
 import EditTurtleSighting from '../pages/EditTurtleSighting';
 import DeleteDistressReport from '../pages/DeleteDistressReport';
 import DeleteBirdSighting from '../pages/DeleteBirdSighting';
-import DeleteSealSighting from '../pages/DeleteSealSighting'; 
+import DeleteSealSighting from '../pages/DeleteSealSighting';
 import DeleteTurtleSighting from '../pages/DeleteTurtleSighting';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
@@ -79,7 +79,7 @@ class App extends React.Component {
             <ProtectedRoute path="/delete/:_id" component={DeleteDistressReport}/>
             <ProtectedRoute path="/deletebird/:_id" component={DeleteBirdSighting}/>
             <ProtectedRoute path="/deleteseal/:_id" component={DeleteSealSighting}/>
-            <ProtectedRoute path="/deleteturtle/:_id" component={DeleteTurtleSighting}/>              
+            <ProtectedRoute path="/deleteturtle/:_id" component={DeleteTurtleSighting}/>
             <Route component={NotFound}/>
           </Switch>
           <Footer/>

@@ -148,7 +148,7 @@ class TurtleSighting extends React.Component {
               {this.state.showing && <Segment>
                 <ReactSVG src="/images/Oahu_NS_all.svg" onClick={this.handleLocation}/>
               </Segment>}
-               
+
               <h2>Please provide the following: </h2>
               <ul>
                 <li>Location Description (i.e. landmarks or building near by)</li>
@@ -156,7 +156,7 @@ class TurtleSighting extends React.Component {
                 <li>If there is more than one animal</li>
                 <li>Interaction between the animal and people/other animals</li>
               </ul>
-               
+
               <LongTextField name='description' inputRef={this.myDescription} placeholder='Example: A turtle is across from Haleiwa Bowls '/>
               <Grid.Row>
                 <Header as="h5" textAlign="center">Satellite</Header>
