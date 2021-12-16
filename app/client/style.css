@@ -56,3 +56,8 @@ input.ui.deleteSubmit.button {
   background-color: red;
   color: white;
 }
+
+ul {
+    text-align: center;
+    list-style-position: inside;
+}
