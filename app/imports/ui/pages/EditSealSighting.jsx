@@ -25,7 +25,7 @@ class EditSealSighting extends React.Component {
     const { date, time, animalName, name, phone, location, latitude, longitude, description, markers, numPeople, image, Submit, _id } = data;
     SealReport.collection.update(_id, { $set: { date, time, animalName, name, phone, location, latitude, longitude, description, markers, numPeople, image, Submit } }, (error) => (error ?
       swal('Error', error.message, 'error') :
-      swal('Success', 'Item deleted successfully', 'success').then(() => {
+      swal('Success', 'Item edited successfully', 'success').then(() => {
         this.setState({ redirectToReferer: true });
       })));
   }
