@@ -12,11 +12,11 @@ class Footer extends React.Component {
   render() {
     return (
       <footer>
-      <div style={{ background: 'white', padding: '5px' }} className="ui center aligned container">
+      <div style={{  padding: '5px' }} className="ui center aligned container">
             <Image src={hmar} width='60px' className="logo" alt='HMAR logo'/>
               Hawai&apos;i Marine Animal Response<br />
               <a href="https://h-mar.org/">Website</a><br />
-              <a className="white-link" href="tel:[888-256-9840]">(888) 256-9840</a>
+              <a href="tel:[888-256-9840]">(888) 256-9840</a>
         </div>
       </footer>
     );
