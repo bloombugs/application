@@ -95,15 +95,12 @@ test('Test that info report page shows and the pages for the animals and other',
   await otherReportPage.isDisplayed(testController);
 });
 
-test.only('Test that admin signup and login works', async (testController) => {
+test('Test that admin signup and login works', async (testController) => {
   await navBar.gotoAdminSignupPage(testController);
   await signupAsAdminPage.signupUser(testController, adminCredentials.username, adminCredentials.password, 'adminpassword');
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, adminCredentials.username, adminCredentials.password);
   await navBar.isLoggedIn(testController, adminCredentials.username);
-});
-
-test.only('Test that admin report pages shows up via navbar', async (testController) => {
   await navBar.gotoBirdListReportAdminPage(testController);
   await birdListReportAdminPage.isDisplayed(testController);
   await navBar.gotoDistressListReportAdminPage(testController);
