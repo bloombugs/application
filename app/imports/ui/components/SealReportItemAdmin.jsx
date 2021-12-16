@@ -2,9 +2,21 @@ import React from 'react';
 import { Table } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
+import { SealReport } from '../../api/report/SealReport';
 
 /** Renders a single row in the List Report (Admin) table. See pages/ListReportAdmin.jsx. */
 class SealReportItemAdmin extends React.Component {
+  
+  constructor(props) {
+    super(props);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
+  handleDelete(e) {
+    console.log(e.target);
+    DistressReport.collection.remove({ _id: this.props.report._id });
+  }
+  
   render() {
     return (
       <Table.Row>
@@ -21,7 +33,10 @@ class SealReportItemAdmin extends React.Component {
         <Table.Cell>{this.props.report.numPeople}</Table.Cell>
         <Table.Cell>{this.props.report.image}</Table.Cell>
         <Table.Cell>
-          <Link to={`/edit/${this.props.report._id}`}>Edit</Link>
+          <Link to={`/editseal/${this.props.report._id}`}>Edit</Link>
+        </Table.Cell>
+        <Table.Cell>
+          <Link to={`/deleteseal/${this.props.report._id}`}>Delete</Link>
         </Table.Cell>
       </Table.Row>
     );
@@ -44,6 +59,7 @@ SealReportItemAdmin.propTypes = {
     numPeople: PropTypes.string,
     image: PropTypes.string,
     _id: PropTypes.string,
+    delete: PropTypes.string,
   }),
 };
 

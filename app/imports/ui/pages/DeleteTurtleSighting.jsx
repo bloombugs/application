@@ -1,31 +1,31 @@
 import React from 'react';
-import { Grid, Loader, Header, Segment } from 'semantic-ui-react';
+import { Grid, Loader, Header, Segment, Button } from 'semantic-ui-react';
 import swal from 'sweetalert';
-import { AutoForm, HiddenField, SelectField, SubmitField, TextField, LongTextField } from 'uniforms-semantic';
+import { AutoForm, HiddenField, SubmitField } from 'uniforms-semantic';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Roles } from 'meteor/alanning:roles';
-import { BirdReport } from '../../api/report/BirdReport';
+import { TurtleReport } from '../../api/report/TurtleReport';
 import { NavLink, Redirect } from 'react-router-dom';
 
-const bridge = new SimpleSchema2Bridge(BirdReport.schema);
+const bridge = new SimpleSchema2Bridge(TurtleReport.schema);
 
 /** Renders the Page for editing a single document. */
-class EditBirdSighting extends React.Component {
+class DeleteTurtleSighting extends React.Component {
   
   constructor(props) {
     super(props);
     this.state = { redirectToReferer: false };
   }
-
+  
   // On successful submit, insert the data.
   submit(data) {
-    const { date, time, animalName, name, phone, location, latitude, longitude, description, markers, numPeople, image, Submit, _id } = data;
-    BirdReport.collection.update(_id, { $set: { date, time, animalName, name, phone, location, latitude, longitude, description, markers, numPeople, image, Submit } }, (error) => (error ?
+    const { _id } = data;
+    TurtleReport.collection.remove({ _id: _id }, (error) => (error ?
       swal('Error', error.message, 'error') :
-      swal('Success', 'Item updated successfully', 'success').then(() => {
+      swal('Success', 'Item deleted successfully', 'success').then(() => {
         this.setState({ redirectToReferer: true });
       })));
   }
@@ -38,7 +38,7 @@ class EditBirdSighting extends React.Component {
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   renderPage() {
     
-    const { from } = { from: { pathname: '/birdadminlist' } };
+    const { from } = { from: { pathname: '/turtleadminlist' } };
     // if correct authentication, redirect to page instead of login screen
     if (this.state.redirectToReferer) {
       return <Redirect to={from}/>;
@@ -47,22 +47,23 @@ class EditBirdSighting extends React.Component {
     return (
       <Grid container centered>
         <Grid.Column>
-          <Header as="h2" textAlign="center">Edit Bird Sighting</Header>
+          <Header as="h2" textAlign="center">Delete Turtle Sighting</Header>
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)} model={this.props.doc}>
-            <Segment>
-              <TextField name='date' type='date'/>
-              <TextField name='time' type='time'/>
-              <TextField name='animalName'/>
-              <TextField name='name'/>
-              <TextField name='phone' decimal={false}/>
-              <TextField name='location'/>
-              <TextField name='latitude'/>
-              <TextField name='longitude'/>
-              <LongTextField name='description'/>
-              <SelectField name='markers'/>
-              <SelectField name='numPeople'/>
-              <TextField name='image'/>
-              <SubmitField value='Submit'/>
+            <Segment textAlign="center">
+              <div>
+                <h4>Date</h4>
+                {this.props.doc ? this.props.doc.date : ''}
+              </div>
+              <div>
+                <h4>Time</h4>
+                {this.props.doc ? this.props.doc.time : ''}
+              </div>
+              <div>
+                <h4>Name</h4>
+                {this.props.doc ? this.props.doc.name : ''}
+              </div>
+              <SubmitField className="deleteSubmit" value='Delete'/>
+              <Button color="grey" as={NavLink} exact to="/turtleadminlist">Cancel</Button>
               <HiddenField name='owner'/>
             </Segment>
           </AutoForm>
@@ -73,7 +74,7 @@ class EditBirdSighting extends React.Component {
 }
 
 // Require the presence of a Report in the props object. Uniforms adds 'model' to the props, which we use.
-EditBirdSighting.propTypes = {
+DeleteTurtleSighting.propTypes = {
   doc: PropTypes.object,
   model: PropTypes.object,
   ready: PropTypes.bool.isRequired,
@@ -85,13 +86,13 @@ export default withTracker(({ match }) => {
   const documentId = match.params._id;
   // Get access to Report documents.
   const subscription = Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-    Meteor.subscribe(BirdReport.adminPublicationName)) : (Meteor.subscribe(BirdReport.userPublicationName));
+    Meteor.subscribe(TurtleReport.adminPublicationName)) : (Meteor.subscribe(TurtleReport.userPublicationName));
   // Determine if the subscription is ready
   const ready = subscription.ready();
   // Get the document
-  const doc = BirdReport.collection.findOne('documentId');
+  const doc = TurtleReport.collection.findOne(documentId);
   return {
     doc,
     ready,
   };
-})(EditBirdSighting);
+})(DeleteTurtleSighting);

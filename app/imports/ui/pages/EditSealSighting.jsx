@@ -89,7 +89,7 @@ export default withTracker(({ match }) => {
   // Determine if the subscription is ready
   const ready = subscription.ready();
   // Get the document
-  const doc = SealReport.collection.findOne(documentId);
+  const doc = SealReport.collection.findOne('documentId');
   return {
     doc,
     ready,
