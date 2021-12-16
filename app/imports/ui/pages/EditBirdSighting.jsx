@@ -47,7 +47,7 @@ class EditBirdSighting extends React.Component {
     return (
       <Grid container centered>
         <Grid.Column>
-          <Header as="h2" textAlign="center">Edit Bird Sighting</Header>
+          <Header as="h2" textAlign="center">Edit Seabird Sighting</Header>
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)} model={this.props.doc}>
             <Segment>
               <TextField name='date' type='date'/>
