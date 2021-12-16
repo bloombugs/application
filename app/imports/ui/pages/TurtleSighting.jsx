@@ -124,7 +124,7 @@ class TurtleSighting extends React.Component {
         <Container><Grid.Column>
           <div className="ui hidden divider"></div>
           <div className="ui hidden divider"></div>
-          <Header as="h2" textAlign="center" style={{ color: 'white' }}>Turtle Sighting Form</Header>
+          <Header as="h2" textAlign="center" style={{ color: 'white' }}>Sea Turtle Sighting Form</Header>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} model={this.state}>
             <Segment>
               <Grid centered container>
@@ -139,7 +139,7 @@ class TurtleSighting extends React.Component {
               <Header textAlign='center'> Contact Info</Header>
               <TextField name='date' type='date' inputRef={this.myDate}/>
               <TextField name='time' type='time' inputRef={this.myTime}/>
-              <p>Click on picture above for turtle name.</p>
+              <p>Click on picture above for turtle name. For unknown turtle, click the last image.</p>
               <TextField name='animalName' inputRef={this.myAnimalName}/>
               <TextField name='name' inputRef={this.myName}/>
               <TextField name='phone' decimal={false} inputRef={this.myPhone}/>
