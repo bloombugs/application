@@ -15,7 +15,7 @@ class Distress extends React.Component {
           <Grid.Column width={14}>
             <div className="ui hidden divider"></div>
             <Header as="h3" style={{ color: 'white' }}>If the animal is in distress, it is preferable to call HMAR
-              so they can attend to the animal as soon as possible (888) 256-9840. However, if you cannot call, please fill out the form</Header>
+              so they can attend to the animal as soon as possible <a href="tel:[888-256-9840]">(888) 256-9840</a>. However, if you cannot call, please fill out the form</Header>
             <Button animated size='big' color='red'>
               <Button.Content visible>Click for Phone Call</Button.Content>
               <a href="tel:[888-256-9840]">
