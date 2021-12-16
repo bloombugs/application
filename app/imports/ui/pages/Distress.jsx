@@ -27,7 +27,7 @@ class Distress extends React.Component {
               </a>
             </Button>
             <hr/>
-            <Header as=h3" style={{ color: 'white' }}>However, if you cannot call, please fill out the online reporting form</Header>
+            <Header as="h3" style={{ color: 'white' }}>However, if you cannot call, please fill out the online reporting form</Header>
             <Button size='big' color='green' icon labelPosition='right'>
               <Icon name='file text'/>
               <Link to="/distressform" id='distressFormPage' style={{ color: 'white' }}>
