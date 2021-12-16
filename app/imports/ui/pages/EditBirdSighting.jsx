@@ -8,18 +8,26 @@ import PropTypes from 'prop-types';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Roles } from 'meteor/alanning:roles';
 import { BirdReport } from '../../api/report/BirdReport';
+import { NavLink, Redirect } from 'react-router-dom';
 
 const bridge = new SimpleSchema2Bridge(BirdReport.schema);
 
 /** Renders the Page for editing a single document. */
 class EditBirdSighting extends React.Component {
+  
+  constructor(props) {
+    super(props);
+    this.state = { redirectToReferer: false };
+  }
 
   // On successful submit, insert the data.
   submit(data) {
     const { date, time, animalName, name, phone, location, latitude, longitude, description, markers, numPeople, image, Submit, _id } = data;
     BirdReport.collection.update(_id, { $set: { date, time, animalName, name, phone, location, latitude, longitude, description, markers, numPeople, image, Submit } }, (error) => (error ?
       swal('Error', error.message, 'error') :
-      swal('Success', 'Item updated successfully', 'success')));
+      swal('Success', 'Item updated successfully', 'success').then(() => {
+        this.setState({ redirectToReferer: true });
+      })));
   }
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
@@ -29,6 +37,13 @@ class EditBirdSighting extends React.Component {
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   renderPage() {
+    
+    const { from } = { from: { pathname: '/distressadminlist' } };
+    // if correct authentication, redirect to page instead of login screen
+    if (this.state.redirectToReferer) {
+      return <Redirect to={from}/>;
+    }
+    
     return (
       <Grid container centered>
         <Grid.Column>
