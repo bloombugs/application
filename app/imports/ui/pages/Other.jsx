@@ -13,13 +13,13 @@ class Other extends React.Component {
           <Grid.Column width={14}>
             <div className="ui hidden divider"></div>
             <Header as="h2" style={{ color: '#f6dcae' }}>Unfortunately HMAR only responds to Hawaiian Monk Seals, Sea Turtles and Seabirds.</Header>
-            <Header as="h3">Below are numbers of other organzations that respond to other wildlife.</Header><br/>
+            <Header as="h3">Below are numbers of other organzations that respond to other wildlife (for all native species).</Header><br/>
             <Image src={hwc} size="tiny" centered alt='Hawaii Wildlife Center logo'/>
-            <Header as="h3">Hawaii Wildlife Center:<br/>Rescue and Response<br/></Header><p> for all native species</p>
-              <Header as="h3"><a className="black-link" href="tel:[808-884-5000]">(808) 884-5000</a></Header>
+            <Header as="h3">Hawaii Wildlife Center:<br/>Rescue and Response<br/>
+              <a className="black-link" href="tel:[808-884-5000]">(808) 884-5000</a></Header>
             <Image src={dlnr} size="tiny" centered alt='State of Hawaii Department of Land and Natural Resources logo'/>
-            <Header as="h3"> State of Hawaii:<br/>Department of Land and Natural Resources<br/>Oahu Division of Forestry and Wildlife (DOFAW)<br/></Header><p> for all native species</p>
-              <Header as="h3"><a className="black-link" href="tel:[808-973-9786]">(808) 973-9786</a>
+            <Header as="h3"> State of Hawaii:<br/>Department of Land and Natural Resources<br/>Oahu Division of Forestry and Wildlife (DOFAW)<br/>
+              <a className="black-link" href="tel:[808-973-9786]">(808) 973-9786</a>
               <a className="black-link" href="tel:[808-295-5896]">(808) 295-5896</a>
               <a className="black-link" href="tel:[808-226-6050]">(808) 226-6050</a></Header>
             <Image src={hpd} size="tiny" centered alt='Honolulu Police Department logo'/>
